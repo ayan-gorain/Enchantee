@@ -1,6 +1,7 @@
 import 'package:enchante/utiles/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class Loginpage extends StatelessWidget {
   const Loginpage({Key? key}) : super(key: key);
@@ -12,7 +13,10 @@ class Loginpage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         elevation:0,
-        brightness: Brightness.light,
+        systemOverlayStyle: const SystemUiOverlayStyle(
+          statusBarColor: Colors.white,
+          statusBarBrightness: Brightness.light// Status bar
+        ),
         backgroundColor: Colors.white,
         leading:IconButton(onPressed:(){
           Navigator.pop(context);
@@ -110,7 +114,10 @@ class Loginpage extends StatelessWidget {
                       )),
                 ),
                 SizedBox(height:20),
-
+                Divider(
+                  color: Colors.black,
+                  thickness: 2,
+                )
               ],
           ),
         ),
