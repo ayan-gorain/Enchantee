@@ -21,6 +21,7 @@ class Myapp extends StatelessWidget {
         Myroutes.open1Route: (context) => Open1page(),
         Myroutes.loginRoute: (context) =>Loginpage(),
         Myroutes.signupRoute: (context) =>Signuppage(),
+        Myroutes.open2Route: (context) =>open2page(),
       },
     );
   }

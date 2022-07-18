@@ -46,7 +46,7 @@ class Open1page extends StatelessWidget {
                     const SizedBox(height: 90),
                     Column(children: <Widget>[
                       MaterialButton(
-                        minWidth: double.infinity,
+                        minWidth:350,
                         height: 60,
                         onPressed: () {
                           Navigator.pushNamed(context, Myroutes.loginRoute);
@@ -65,7 +65,7 @@ class Open1page extends StatelessWidget {
                     const SizedBox(height: 25),
                     Column(children: <Widget>[
                       MaterialButton(
-                        minWidth: double.infinity,
+                        minWidth:350,
                         height: 60,
                         onPressed: () {
                           Navigator.pushNamed(context, Myroutes.signupRoute );

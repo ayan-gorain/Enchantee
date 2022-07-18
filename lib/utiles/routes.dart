@@ -3,4 +3,5 @@ class Myroutes {
   static String open1Route = "/open1";
   static String loginRoute = "/login";
   static String signupRoute = "/sign";
+  static String open2Route= "/open2";
 }
