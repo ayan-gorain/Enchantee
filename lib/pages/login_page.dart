@@ -97,7 +97,7 @@ class Loginpage extends StatelessWidget {
                                 inherit: true,
                                 fontSize: 17,
                                 color: Colors.black,
-                                fontWeight: FontWeight.w200)),
+                                fontWeight: FontWeight.w400)),
                         ),
                   ],
                 ),
