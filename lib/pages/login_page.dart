@@ -137,18 +137,24 @@ class Loginpage extends StatelessWidget {
                   children: [
                     FloatingActionButton(
                       child: IconButton(
+
                   icon: const FaIcon(FontAwesomeIcons.google),
-                  onPressed: () {}),
-                      backgroundColor: Colors.greenAccent,
+                  onPressed: () {}
+                      ),
+
+                      backgroundColor: Colors.deepOrangeAccent,
                       foregroundColor: Colors.white,
+
                       onPressed: () {
                         //Navigator.pushNamed(context, Myroutes.open1Route);
                       },
-                    ),FloatingActionButton(
+
+                    ),
+                    FloatingActionButton(
                       child: IconButton(
                   icon: const FaIcon(FontAwesomeIcons.facebook),
                   onPressed: () {}),
-                      backgroundColor: Colors.greenAccent,
+                      backgroundColor: Colors.deepOrangeAccent,
                       foregroundColor: Colors.white,
                       onPressed: () {
                         //Navigator.pushNamed(context, Myroutes.open1Route);

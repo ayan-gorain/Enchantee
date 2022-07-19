@@ -5,7 +5,10 @@ class Signuppage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 60, 238, 193),
+      backgroundColor: Colors.white,
+      body:SingleChildScrollView(
+
+      ),
       
     );
   }
