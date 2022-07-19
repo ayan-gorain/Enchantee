@@ -1,7 +1,7 @@
 import 'package:enchante/utiles/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Loginpage extends StatelessWidget {
   const Loginpage({Key? key}) : super(key: key);
@@ -11,18 +11,7 @@ class Loginpage extends StatelessWidget {
     return Scaffold(
 
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation:0,
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarBrightness: Brightness.light// Status bar
-        ),
-        backgroundColor: Colors.white,
-        leading:IconButton(onPressed:(){
-          Navigator.pop(context);
-        },
-        icon:Icon(Icons.arrow_back_ios,size:20,color:Colors.black),),
-      ),
+
 
       body:SingleChildScrollView(
         child: Container(
@@ -31,9 +20,10 @@ class Loginpage extends StatelessWidget {
 
           child: Column(
               children: <Widget>[
+
                 Image.asset('assets/images/loginnn.png',
                   height: 200,
-                  width: 400,
+                  width: 280,
                 ),
                 Text("Login ",
                     textAlign: TextAlign.center,
@@ -91,18 +81,34 @@ class Loginpage extends StatelessWidget {
                         ),
                         obscureText: true,
                       ),
-
                     ),
+
                   ),
                 ),
-                const SizedBox(height:30),
+                SizedBox(height:10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+
+                    TextButton(onPressed: (){},
+                        child: Text(
+                          '  Forgot password',
+                            style: TextStyle(
+                                inherit: true,
+                                fontSize: 17,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w200)),
+                        ),
+                  ],
+                ),
+                const SizedBox(height:10),
                 MaterialButton(
                   minWidth:350,
                   height: 50,
                   onPressed: () {
                     Navigator.pushNamed(context, Myroutes.open2Route);
                   },
-                  color: Colors.lightGreen,
+                  color: Colors.deepOrangeAccent,
                   shape: RoundedRectangleBorder(
                       side: BorderSide(
                         color: Colors.black,
@@ -113,14 +119,48 @@ class Loginpage extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                       )),
                 ),
-                SizedBox(height:20),
-                Divider(
-                  color: Colors.black,
-                  thickness: 2,
-                )
+                SizedBox(height:40),
+                Row(
+                    children: <Widget>[
+                      Expanded(
+                          child: Divider()
+                      ),
+                      Text("or continue with"),
+                      Expanded(
+                          child: Divider()
+                      ),
+                    ]
+                ),
+                SizedBox(height:60),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FloatingActionButton(
+                      child: IconButton(
+                  icon: const FaIcon(FontAwesomeIcons.google),
+                  onPressed: () {}),
+                      backgroundColor: Colors.greenAccent,
+                      foregroundColor: Colors.white,
+                      onPressed: () {
+                        //Navigator.pushNamed(context, Myroutes.open1Route);
+                      },
+                    ),FloatingActionButton(
+                      child: IconButton(
+                  icon: const FaIcon(FontAwesomeIcons.facebook),
+                  onPressed: () {}),
+                      backgroundColor: Colors.greenAccent,
+                      foregroundColor: Colors.white,
+                      onPressed: () {
+                        //Navigator.pushNamed(context, Myroutes.open1Route);
+                      },
+                    ),
+
+                  ],
+                ),
               ],
           ),
         ),
+
       )
     );
   }
@@ -135,7 +175,7 @@ class open2page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
+
     );
   }
 }
