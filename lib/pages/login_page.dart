@@ -1,30 +1,35 @@
 import 'package:enchante/utiles/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class Loginpage extends StatelessWidget {
-  const Loginpage({Key? key}) : super(key: key);
+class Loginpage extends StatefulWidget {
+  @override
+  State<Loginpage> createState() => _LoginpageState();
+}
+
+class _LoginpageState extends State<Loginpage> {
+  bool _isHidden = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
 
-      backgroundColor: Colors.white,
+        backgroundColor: Colors.white,
 
 
-      body:SingleChildScrollView(
-        child: Container(
-          height:MediaQuery.of(context).size.height,
-          width:double.infinity,
+        body: SingleChildScrollView(
 
-          child: Column(
+          child: Container(
+            height: MediaQuery
+                .of(context)
+                .size
+                .height,
+            width: double.infinity,
+            child: Column(
               children: <Widget>[
-
-                Image.asset('assets/images/loginnn.png',
-                  height: 200,
-                  width: 280,
-                ),
+                SizedBox(height: 200),
                 Text("Login ",
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -32,7 +37,7 @@ class Loginpage extends StatelessWidget {
                         fontSize: 50,
                         color: Colors.black,
                         fontWeight: FontWeight.w800)),
-                SizedBox(height:5),
+                SizedBox(height: 5),
                 Text("Login in with your account  ",
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -40,70 +45,79 @@ class Loginpage extends StatelessWidget {
                         fontSize: 20,
                         color: Colors.black,
                         fontWeight: FontWeight.w200)),
-                SizedBox(height:40),
+                SizedBox(height: 40),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal:27.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 27.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      color:Colors.grey[200],
-                      border: Border.all(color:Colors.white),
+                      color: Colors.grey[200],
+                      border: Border.all(color: Colors.white),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(left:20.0),
+                      padding: const EdgeInsets.only(left: 20.0),
                       child: TextField(
-                        decoration:InputDecoration(border:InputBorder.none,
+                        decoration: InputDecoration(border: InputBorder.none,
                           labelText: 'Email',
-                          hintText:'Enter your Email',
+                          hintText: 'Enter your Email',
                           icon: Icon(Icons.mail_outline),
                         ),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height:20),
+                SizedBox(height: 20),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal:27.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 27.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      color:Colors.grey[200],
-                      border: Border.all(color:Colors.white),
+                      color: Colors.grey[200],
+                      border: Border.all(color: Colors.white),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(left:20.0),
+                      padding: const EdgeInsets.only(left: 20.0),
                       child: TextField(
-                        decoration:InputDecoration(border:InputBorder.none,
+                        obscureText: _isHidden,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
                           labelText: 'Password',
-                          hintText:'Enter your Password',
+                          hintText: 'Enter your Password',
                           icon: Icon(Icons.lock_outline),
-                            suffixIcon: Icon(Icons.visibility_off_outlined),
+                          suffix: InkWell(
+                            onTap: _togglePasswordView,
+                            child: Icon(
+                              _isHidden
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
+                            ),
+                          ),
                         ),
-                        obscureText: true,
+
                       ),
                     ),
 
                   ),
                 ),
-                SizedBox(height:10),
+                SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
 
-                    TextButton(onPressed: (){},
-                        child: Text(
+                    TextButton(onPressed: () {},
+                      child: Text(
                           '  Forgot password',
-                            style: TextStyle(
-                                inherit: true,
-                                fontSize: 17,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w400)),
-                        ),
+                          style: TextStyle(
+                              inherit: true,
+                              fontSize: 17,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400)),
+                    ),
                   ],
                 ),
-                const SizedBox(height:10),
+                const SizedBox(height: 10),
                 MaterialButton(
-                  minWidth:350,
+                  minWidth: 350,
                   height: 50,
                   onPressed: () {
                     Navigator.pushNamed(context, Myroutes.open2Route);
@@ -119,7 +133,7 @@ class Loginpage extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                       )),
                 ),
-                SizedBox(height:40),
+                SizedBox(height: 40),
                 Row(
                     children: <Widget>[
                       Expanded(
@@ -131,15 +145,15 @@ class Loginpage extends StatelessWidget {
                       ),
                     ]
                 ),
-                SizedBox(height:60),
+                SizedBox(height: 60),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     FloatingActionButton(
                       child: IconButton(
 
-                  icon: const FaIcon(FontAwesomeIcons.google),
-                  onPressed: () {}
+                          icon: const FaIcon(FontAwesomeIcons.google),
+                          onPressed: () {}
                       ),
 
                       backgroundColor: Colors.deepOrangeAccent,
@@ -152,8 +166,17 @@ class Loginpage extends StatelessWidget {
                     ),
                     FloatingActionButton(
                       child: IconButton(
-                  icon: const FaIcon(FontAwesomeIcons.facebook),
-                  onPressed: () {}),
+                          icon: const FaIcon(FontAwesomeIcons.github),
+                          onPressed: () {}),
+                      backgroundColor: Colors.deepOrangeAccent,
+                      foregroundColor: Colors.white,
+                      onPressed: () {
+                        //Navigator.pushNamed(context, Myroutes.open1Route);
+                      },
+                    ), FloatingActionButton(
+                      child: IconButton(
+                          icon: const FaIcon(FontAwesomeIcons.facebook),
+                          onPressed: () {}),
                       backgroundColor: Colors.deepOrangeAccent,
                       foregroundColor: Colors.white,
                       onPressed: () {
@@ -164,24 +187,20 @@ class Loginpage extends StatelessWidget {
                   ],
                 ),
               ],
+            ),
           ),
-        ),
 
-      )
+        )
     );
   }
 
-
-
-  }
-
-class open2page extends StatelessWidget {
-  const open2page({ Key? key }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-
-    );
+  void _togglePasswordView() {
+    setState(() {
+      _isHidden = !_isHidden;
+    });
   }
 }
+
+
+
+

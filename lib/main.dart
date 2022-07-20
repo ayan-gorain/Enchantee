@@ -1,3 +1,4 @@
+import 'package:enchante/pages/first_page.dart';
 import 'package:enchante/utiles/routes.dart';
 import 'package:flutter/material.dart';
 import 'pages/open_page.dart';
@@ -21,7 +22,7 @@ class Myapp extends StatelessWidget {
         Myroutes.open1Route: (context) => Open1page(),
         Myroutes.loginRoute: (context) =>Loginpage(),
         Myroutes.signupRoute: (context) =>Signuppage(),
-        Myroutes.open2Route: (context) =>open2page(),
+        Myroutes.open2Route: (context) =>Open2page(),
       },
     );
   }
