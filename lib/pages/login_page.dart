@@ -22,10 +22,7 @@ class _LoginpageState extends State<Loginpage> {
         body: SingleChildScrollView(
 
           child: Container(
-            height: MediaQuery
-                .of(context)
-                .size
-                .height,
+            height: MediaQuery.of(context).size.height,
             width: double.infinity,
             child: Column(
               children: <Widget>[
@@ -100,22 +97,7 @@ class _LoginpageState extends State<Loginpage> {
                   ),
                 ),
                 SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
 
-                    TextButton(onPressed: () {},
-                      child: Text(
-                          '  Forgot password',
-                          style: TextStyle(
-                              inherit: true,
-                              fontSize: 17,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w400)),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 10),
                 MaterialButton(
                   minWidth: 350,
                   height: 50,
@@ -133,7 +115,26 @@ class _LoginpageState extends State<Loginpage> {
                         fontWeight: FontWeight.w500,
                       )),
                 ),
-                SizedBox(height: 40),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    const SizedBox(height: 60),
+                    Padding(
+                      padding: const EdgeInsets.only(left:190),
+                      child: TextButton(onPressed: () {},
+                        child: Text(
+                            '  Forgot password?',
+                            style: TextStyle(
+                                inherit: true,
+                                fontSize: 17,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w400)),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                SizedBox(height: 20),
                 Row(
                     children: <Widget>[
                       Expanded(

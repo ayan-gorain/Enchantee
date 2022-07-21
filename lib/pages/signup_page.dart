@@ -1,3 +1,4 @@
+import 'package:enchante/utiles/routes.dart';
 import 'package:flutter/material.dart';
 class Signuppage extends StatelessWidget {
   const Signuppage({ Key? key }) : super(key: key);
@@ -26,9 +27,9 @@ class Signuppage extends StatelessWidget {
                   minWidth:350,
                   height: 50,
                   onPressed: () {
-                   // Navigator.pushNamed(context, Myroutes.open2Route);
+                    Navigator.pushNamed(context, Myroutes.customersignupRoute);
                   },
-                  color: Colors.deepOrangeAccent,
+                  color: Colors.lightGreenAccent,
                   shape: RoundedRectangleBorder(
                       side: BorderSide(
                         color: Colors.black,
@@ -45,7 +46,7 @@ class Signuppage extends StatelessWidget {
                   onPressed: () {
                    // Navigator.pushNamed(context, Myroutes.open2Route);
                   },
-                  color: Colors.deepOrangeAccent,
+                  color: Colors.white,
                   shape: RoundedRectangleBorder(
                       side: BorderSide(
                         color: Colors.black,
@@ -62,7 +63,7 @@ class Signuppage extends StatelessWidget {
                   onPressed: () {
                    // Navigator.pushNamed(context, Myroutes.open2Route);
                   },
-                  color: Colors.deepOrangeAccent,
+                  color: Colors.lightGreenAccent,
                   shape: RoundedRectangleBorder(
                       side: BorderSide(
                         color: Colors.black,
