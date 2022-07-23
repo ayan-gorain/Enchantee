@@ -1,5 +1,8 @@
+import 'package:enchante/widget/user_image_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:image_picker/image_picker.dart';
+
 
 class Customersignupage extends StatefulWidget {
   const Customersignupage({Key? key}) : super(key: key);
@@ -20,6 +23,7 @@ class _CustomersignupageState extends State<Customersignupage> {
           width:double.infinity,
             child: Column(
               children:<Widget> [
+
                 SizedBox(height:30),
                 const Padding(
                   padding: EdgeInsets.only(right:150,top:30),
@@ -39,12 +43,11 @@ class _CustomersignupageState extends State<Customersignupage> {
                             color: Colors.black,
                             fontWeight: FontWeight.w300)),
                 ),
-                SizedBox(height: 30),
-
+                const SizedBox(height: 20),
+                const UserImagePicker(),
                 const Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
                   child: TextField(
-
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Color.fromRGBO(229, 235, 138, 0.2),
