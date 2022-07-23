@@ -43,54 +43,48 @@ class _LoginpageState extends State<Loginpage> {
                         color: Colors.black,
                         fontWeight: FontWeight.w200)),
                 SizedBox(height: 40),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 27.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      border: Border.all(color: Colors.white),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 20.0),
-                      child: TextField(
-                        decoration: InputDecoration(border: InputBorder.none,
-                          labelText: 'Email',
-                          hintText: 'Enter your Email',
-                          icon: Icon(Icons.mail_outline),
-                        ),
+                const Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: TextField(
+
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color.fromRGBO(229, 235, 138, 0.2),
+                      prefixIcon : Icon(Icons.person),
+                      labelText: 'First Name',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                        borderSide: BorderSide(color: Colors.blue),
+
                       ),
+                      hintText: 'Enter your First Name',
+
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 27.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      border: Border.all(color: Colors.white),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 20.0),
-                      child: TextField(
-                        obscureText: _isHidden,
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          labelText: 'Password',
-                          hintText: 'Enter your Password',
-                          icon: Icon(Icons.lock_outline),
-                          suffix: InkWell(
-                            onTap: _togglePasswordView,
-                            child: Icon(
-                              _isHidden
-                                  ? Icons.visibility
-                                  : Icons.visibility_off,
-                            ),
-                          ),
-                        ),
 
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: TextField(
+                    obscureText: _isHidden,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color.fromRGBO(229, 235, 138, 0.2),
+                      prefixIcon : Icon(Icons.person),
+                      labelText: 'Password',
+                      border: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                        borderSide: BorderSide(color: Colors.blue),
+
+                      ),
+                      hintText: 'Enter Password here',
+                      suffix: InkWell(
+                        onTap: _togglePasswordView,
+                        child: Icon(
+                          _isHidden
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                        ),
                       ),
                     ),
 

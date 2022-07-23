@@ -21,8 +21,8 @@ class _CustomersignupageState extends State<Customersignupage> {
             child: Column(
               children:<Widget> [
                 SizedBox(height:30),
-                Padding(
-                  padding: const EdgeInsets.only(right:150,top:30),
+                const Padding(
+                  padding: EdgeInsets.only(right:150,top:30),
                   child: Text("Welcome,",
                       style: TextStyle(
                           inherit: true,
@@ -30,8 +30,8 @@ class _CustomersignupageState extends State<Customersignupage> {
                           color: Colors.black,
                           fontWeight: FontWeight.w800)),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(right:150,top:10),
+                const Padding(
+                  padding: EdgeInsets.only(right:150,top:10),
                   child: Text("Signup as a customer",
                         style: TextStyle(
                             inherit: true,
@@ -41,56 +41,62 @@ class _CustomersignupageState extends State<Customersignupage> {
                 ),
                 SizedBox(height: 30),
 
-                Padding(
+                const Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      border: Border.all(color: Colors.white),
-                      borderRadius: BorderRadius.circular(12),
+                  child: TextField(
+
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color.fromRGBO(229, 235, 138, 0.2),
+                      prefixIcon : Icon(Icons.person),
+                      labelText: 'First Name',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                        borderSide: BorderSide(color: Colors.blue),
+
                     ),
-                    child: TextField(
-                      decoration: InputDecoration(border: InputBorder.none,
-                        labelText: 'First name',
-                        hintText: 'Enter your First Name',
-                        icon: Icon(Icons.person),
-                      ),
+                      hintText: 'Enter your First Name',
+
                     ),
                   ),
                 ),
-                Padding(
+                const Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      border: Border.all(color: Colors.white),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
                     child: TextField(
-                      decoration: InputDecoration(border: InputBorder.none,
-                        labelText: 'Last name',
-                        hintText: 'Enter your Last Name',
-                        icon: Icon(Icons.person),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      border: Border.all(color: Colors.white),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: IntlPhoneField(
                       decoration: InputDecoration(
-                        labelText: 'Phone Number',
-                        hintText: 'Enter your Phone number',
+                        filled: true,
+                        fillColor: Color.fromRGBO(229, 235, 138, 0.2),
+                        prefixIcon : Icon(Icons.person),
+                        labelText: 'Last Name',
                         border: OutlineInputBorder(
-                          borderSide: BorderSide(),
+                          borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                          borderSide: BorderSide(color: Colors.blue),
+
                         ),
+                        hintText: 'Enter your Last Name',
+
                       ),
+
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Container(
+                    child: IntlPhoneField(
+                      decoration: const InputDecoration(
+                        filled: true,
+                        fillColor: Color.fromRGBO(229, 235, 138, 0.2),
+                        prefixIcon : Icon(Icons.person),
+                        labelText: 'First name',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                          borderSide: BorderSide(color: Colors.blue),
+
+                        ),
+                        hintText: 'Enter your First Name',
+
+                      ),
+
                       initialCountryCode: 'IN',
                       onChanged: (phone) {
                         print(phone.completeNumber);
@@ -98,77 +104,76 @@ class _CustomersignupageState extends State<Customersignupage> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      border: Border.all(color: Colors.white),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: TextField(
-                      decoration: InputDecoration(border: InputBorder.none,
+                const Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: TextField(
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Color.fromRGBO(229, 235, 138, 0.2),
+                        prefixIcon : Icon(Icons.mail_outline),
                         labelText: 'Email',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                          borderSide: BorderSide(color: Colors.blue),
+
+                        ),
                         hintText: 'Enter your Email',
 
-                        icon: Icon(Icons.mail_outline),
-
                       ),
                     ),
-                  ),
+
                 ),
 
 
                 Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      border: Border.all(color: Colors.white),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: TextField(
-                      obscureText: _isHidden,
-                      decoration: InputDecoration(border: InputBorder.none,
-                        labelText: 'Password',
-                        hintText: 'Enter your Password',
-                        icon: Icon(Icons.lock_outline),
-                        suffix: InkWell(
-                          onTap: _togglePasswordView,
-                          child: Icon(
-                            _isHidden
-                                ? Icons.visibility
-                                : Icons.visibility_off,
-                          ),
-                        ),
+                  child: TextField(
+                    obscureText: _isHidden,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color.fromRGBO(229, 235, 138, 0.2),
+                      prefixIcon : Icon(Icons.person),
+                      labelText: 'Password',
+                      border: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                        borderSide: BorderSide(color: Colors.blue),
 
                       ),
+                      hintText: 'Enter Password here',
+                      suffix: InkWell(
+                        onTap: _togglePasswordView,
+                        child: Icon(
+                          _isHidden
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                        ),
+                      ),
                     ),
+
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      border: Border.all(color: Colors.white),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: TextField(
-                      obscureText: _isHidden,
-                      decoration: InputDecoration(border: InputBorder.none,
-                        labelText: 'Confirm Password',
-                        hintText: 'Enter your Password',
-                        icon: Icon(Icons.lock_outline),
-                        suffix: InkWell(
-                          onTap: _togglePasswordView,
-                          child: Icon(
-                            _isHidden
-                                ? Icons.visibility
-                                : Icons.visibility_off,
-                          ),
-                        ),
+                  child: TextField(
+                    obscureText: _isHidden,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color.fromRGBO(229, 235, 138, 0.2),
+                      prefixIcon : Icon(Icons.person),
+                      labelText: 'Confirm Password',
+                      border: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                        borderSide: BorderSide(color: Colors.blue),
 
+                      ),
+                      hintText: 'Reconfirm your password',
+                      suffix: InkWell(
+                        onTap: _togglePasswordView,
+                        child: Icon(
+                          _isHidden
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                        ),
                       ),
                     ),
                   ),
