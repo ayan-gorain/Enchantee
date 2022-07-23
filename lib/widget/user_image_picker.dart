@@ -30,8 +30,8 @@ class _UserImagePickerState extends State<UserImagePicker> {
       context: context,
       builder: (BuildContext context) {
         return Container(
-          height: 150,
-          color: Colors.amber,
+          height: 200,
+          color: Colors.white,
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

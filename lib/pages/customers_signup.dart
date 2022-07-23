@@ -1,3 +1,4 @@
+import 'package:enchante/utiles/routes.dart';
 import 'package:enchante/widget/user_image_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
@@ -43,10 +44,11 @@ class _CustomersignupageState extends State<Customersignupage> {
                             color: Colors.black,
                             fontWeight: FontWeight.w300)),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 30),
                 const UserImagePicker(),
+                const SizedBox(height: 20),
                 const Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(3.0),
                   child: TextField(
                     decoration: InputDecoration(
                       filled: true,
@@ -64,7 +66,7 @@ class _CustomersignupageState extends State<Customersignupage> {
                   ),
                 ),
                 const Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(3.0),
                     child: TextField(
                       decoration: InputDecoration(
                         filled: true,
@@ -83,7 +85,7 @@ class _CustomersignupageState extends State<Customersignupage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(3.0),
                   child: Container(
                     child: IntlPhoneField(
                       decoration: const InputDecoration(
@@ -108,7 +110,7 @@ class _CustomersignupageState extends State<Customersignupage> {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(3.0),
                   child: TextField(
                       decoration: InputDecoration(
                         filled: true,
@@ -129,7 +131,7 @@ class _CustomersignupageState extends State<Customersignupage> {
 
 
                 Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(3.0),
                   child: TextField(
                     obscureText: _isHidden,
                     decoration: InputDecoration(
@@ -156,7 +158,7 @@ class _CustomersignupageState extends State<Customersignupage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(3.0),
                   child: TextField(
                     obscureText: _isHidden,
                     decoration: InputDecoration(
@@ -181,8 +183,24 @@ class _CustomersignupageState extends State<Customersignupage> {
                     ),
                   ),
                 ),
-
-
+                const SizedBox(height:20),
+                MaterialButton(
+                  minWidth: 300,
+                  height: 50,
+                  onPressed: () {
+                    Navigator.pushNamed(context, Myroutes.customersignup1Route);
+                  },
+                  color: Colors.deepOrangeAccent,
+                  shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        color: Colors.black,
+                      ),
+                      borderRadius: BorderRadius.circular(50)),
+                  child: Text("Next",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                      )),
+                ),
               ],
 
             ),
