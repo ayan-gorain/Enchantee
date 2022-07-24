@@ -5,5 +5,6 @@ class Myroutes {
   static String signupRoute = "/sign";
   static String open2Route= "/open2";
   static String customersignupRoute= "/cussignup";
-  static String customersignup1Route= "/cussign1up";
+  static String forgetpasswordRoute= "/forgot";
+
 }

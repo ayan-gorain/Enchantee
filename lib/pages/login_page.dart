@@ -44,12 +44,12 @@ class _LoginpageState extends State<Loginpage> {
                         fontWeight: FontWeight.w200)),
                 SizedBox(height: 40),
                 const Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.only(left:30,right: 30,top: 10),
                   child: TextField(
 
                     decoration: InputDecoration(
                       filled: true,
-                      fillColor: Color.fromRGBO(229, 235, 138, 0.2),
+                      fillColor: Color.fromRGBO(191, 181, 180, 0.2),
                       prefixIcon : Icon(Icons.person),
                       labelText: 'First Name',
                       border: OutlineInputBorder(
@@ -64,12 +64,12 @@ class _LoginpageState extends State<Loginpage> {
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.only(left:30,right: 30,top: 10),
                   child: TextField(
                     obscureText: _isHidden,
                     decoration: InputDecoration(
                       filled: true,
-                      fillColor: Color.fromRGBO(229, 235, 138, 0.2),
+                      fillColor: Color.fromRGBO(191, 181, 180, 0.2),
                       prefixIcon : Icon(Icons.person),
                       labelText: 'Password',
                       border: const OutlineInputBorder(
@@ -115,7 +115,9 @@ class _LoginpageState extends State<Loginpage> {
                     const SizedBox(height: 60),
                     Padding(
                       padding: const EdgeInsets.only(left:190),
-                      child: TextButton(onPressed: () {},
+                      child: TextButton(onPressed: () {
+                        Navigator.pushNamed(context, Myroutes.forgetpasswordRoute);
+                      },
                         child: Text(
                             '  Forgot password?',
                             style: TextStyle(

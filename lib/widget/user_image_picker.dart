@@ -64,7 +64,12 @@ class _UserImagePickerState extends State<UserImagePicker> {
           children: [
             CircleAvatar(
               radius: 50,
+              child: ClipRRect(
+                child: Image.asset('assets/images/download.png'),
+                borderRadius: BorderRadius.circular(50.0),
+              ),
               backgroundImage: _pickedImage !=null ?  FileImage(_pickedImage):null,
+
             ),
             Positioned(
                 left: 56,

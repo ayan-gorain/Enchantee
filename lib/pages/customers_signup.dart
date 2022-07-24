@@ -25,7 +25,7 @@ class _CustomersignupageState extends State<Customersignupage> {
             child: Column(
               children:<Widget> [
 
-                SizedBox(height:30),
+                SizedBox(height:10),
                 const Padding(
                   padding: EdgeInsets.only(right:150,top:30),
                   child: Text("Welcome,",
@@ -48,11 +48,11 @@ class _CustomersignupageState extends State<Customersignupage> {
                 const UserImagePicker(),
                 const SizedBox(height: 20),
                 const Padding(
-                  padding: EdgeInsets.all(3.0),
+                  padding: EdgeInsets.only(left:30,right: 30,top: 10),
                   child: TextField(
                     decoration: InputDecoration(
                       filled: true,
-                      fillColor: Color.fromRGBO(229, 235, 138, 0.2),
+                      fillColor: Color.fromRGBO(191, 181, 180, 0.2),
                       prefixIcon : Icon(Icons.person),
                       labelText: 'First Name',
                       border: OutlineInputBorder(
@@ -66,11 +66,11 @@ class _CustomersignupageState extends State<Customersignupage> {
                   ),
                 ),
                 const Padding(
-                  padding: const EdgeInsets.all(3.0),
+                  padding: const EdgeInsets.only(left:30,right: 30,top: 10),
                     child: TextField(
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: Color.fromRGBO(229, 235, 138, 0.2),
+                        fillColor: Color.fromRGBO(191, 181, 180, 0.2),
                         prefixIcon : Icon(Icons.person),
                         labelText: 'Last Name',
                         border: OutlineInputBorder(
@@ -85,20 +85,20 @@ class _CustomersignupageState extends State<Customersignupage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(3.0),
+                  padding: EdgeInsets.only(left:30,right: 30,top: 10),
                   child: Container(
                     child: IntlPhoneField(
                       decoration: const InputDecoration(
                         filled: true,
-                        fillColor: Color.fromRGBO(229, 235, 138, 0.2),
+                        fillColor: Color.fromRGBO(191, 181, 180, 0.2),
                         prefixIcon : Icon(Icons.person),
-                        labelText: 'First name',
+                        labelText: 'Phone number',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(30.0)),
                           borderSide: BorderSide(color: Colors.blue),
 
                         ),
-                        hintText: 'Enter your First Name',
+                        hintText: 'Enter your phone number',
 
                       ),
 
@@ -110,11 +110,11 @@ class _CustomersignupageState extends State<Customersignupage> {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.all(3.0),
+                  padding: EdgeInsets.only(left:30,right: 30,top: 10),
                   child: TextField(
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: Color.fromRGBO(229, 235, 138, 0.2),
+                        fillColor: Color.fromRGBO(191, 181, 180, 0.2),
                         prefixIcon : Icon(Icons.mail_outline),
                         labelText: 'Email',
                         border: OutlineInputBorder(
@@ -131,12 +131,12 @@ class _CustomersignupageState extends State<Customersignupage> {
 
 
                 Padding(
-                  padding: const EdgeInsets.all(3.0),
+                  padding: const EdgeInsets.only(left:30,right: 30,top: 10),
                   child: TextField(
                     obscureText: _isHidden,
                     decoration: InputDecoration(
                       filled: true,
-                      fillColor: Color.fromRGBO(229, 235, 138, 0.2),
+                      fillColor: Color.fromRGBO(191, 181, 180, 0.2),
                       prefixIcon : Icon(Icons.person),
                       labelText: 'Password',
                       border: const OutlineInputBorder(
@@ -158,12 +158,12 @@ class _CustomersignupageState extends State<Customersignupage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(3.0),
+                  padding: const EdgeInsets.only(left:30,right: 30,top: 10),
                   child: TextField(
                     obscureText: _isHidden,
                     decoration: InputDecoration(
                       filled: true,
-                      fillColor: Color.fromRGBO(229, 235, 138, 0.2),
+                      fillColor: Color.fromRGBO(191, 181, 180, 0.2),
                       prefixIcon : Icon(Icons.person),
                       labelText: 'Confirm Password',
                       border: const OutlineInputBorder(
@@ -188,15 +188,15 @@ class _CustomersignupageState extends State<Customersignupage> {
                   minWidth: 300,
                   height: 50,
                   onPressed: () {
-                    Navigator.pushNamed(context, Myroutes.customersignup1Route);
+                    Navigator.pushNamed(context, Myroutes.open2Route);
                   },
-                  color: Colors.deepOrangeAccent,
+                  color: Colors.yellowAccent,
                   shape: RoundedRectangleBorder(
                       side: BorderSide(
                         color: Colors.black,
                       ),
-                      borderRadius: BorderRadius.circular(50)),
-                  child: Text("Next",
+                      borderRadius: BorderRadius.circular(60)),
+                  child: Text("Sign up",
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                       )),
