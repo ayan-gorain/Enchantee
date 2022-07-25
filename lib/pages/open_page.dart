@@ -13,11 +13,11 @@ class Openpage extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(height: 40.0),
+            const SizedBox(height: 30.0),
             Padding(
               padding: const EdgeInsets.all(40.0),
               child: Image.asset(
-                "assets/images/lo.jpg",
+                "assets/images/log.jpg",
                 fit: BoxFit.cover,
               ),
             ),
@@ -37,7 +37,7 @@ class Openpage extends StatelessWidget {
                     fontSize: 35,
                     color: Colors.black,
                     fontWeight: FontWeight.w600)),
-            const SizedBox(height: 100.0),
+            const SizedBox(height: 50.0),
             const Text("We are happy to see you here",
             textAlign: TextAlign.center,
                 style: TextStyle(
@@ -45,7 +45,7 @@ class Openpage extends StatelessWidget {
                     fontSize: 24,
                     color: Colors.black,
                     fontWeight: FontWeight.w300)),
-            const SizedBox(height: 100.0),
+            const SizedBox(height: 80.0),
             FloatingActionButton(
               child: Icon(Icons.person),
               backgroundColor: Colors.green,
@@ -61,5 +61,4 @@ class Openpage extends StatelessWidget {
   }
 }
 
-class Myroute {
-}
+

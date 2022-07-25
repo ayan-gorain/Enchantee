@@ -38,7 +38,7 @@ class Open1page extends StatelessWidget {
                       height: MediaQuery.of(context).size.height / 3,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage('assets/images/ww.jpg'),
+                          image: AssetImage('assets/images/happ.webp'),
                           fit: BoxFit.cover,
                         ),
                       ),
