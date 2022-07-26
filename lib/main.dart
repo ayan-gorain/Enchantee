@@ -1,4 +1,5 @@
 import 'package:enchante/pages/forgotPassword_page.dart';
+import 'package:enchante/pages/otp_page.dart';
 import 'package:flutter/material.dart';
 import 'package:enchante/pages/customers_signup.dart';
 import 'package:enchante/pages/first_page.dart';
@@ -27,6 +28,7 @@ class Myapp extends StatelessWidget {
         Myroutes.open2Route: (context) =>Open2page(),
         Myroutes.customersignupRoute: (context) =>Customersignupage(),
         Myroutes.forgetpasswordRoute: (context) =>Forgotpasswordpage(),
+        Myroutes.otpRoute: (context) =>otppage(),
 
       },
     );

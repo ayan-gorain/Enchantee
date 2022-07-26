@@ -188,7 +188,7 @@ class _CustomersignupageState extends State<Customersignupage> {
                   minWidth: 300,
                   height: 50,
                   onPressed: () {
-                    Navigator.pushNamed(context, Myroutes.open2Route);
+                    Navigator.pushNamed(context, Myroutes.otpRoute);
                   },
                   color: Colors.yellowAccent,
                   shape: RoundedRectangleBorder(
