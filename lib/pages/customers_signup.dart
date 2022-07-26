@@ -88,6 +88,7 @@ class _CustomersignupageState extends State<Customersignupage> {
                   padding: EdgeInsets.only(left:30,right: 30,top: 10),
                   child: Container(
                     child: IntlPhoneField(
+                      keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
                         filled: true,
                         fillColor: Color.fromRGBO(191, 181, 180, 0.2),
