@@ -139,7 +139,25 @@ class _otppageState extends State<otppage> {
                       ),
                     ),
                   ],
-                )
+                ),
+                const SizedBox(height: 60,),
+                MaterialButton(
+                  minWidth: 200,
+                  height: 50,
+                  onPressed: () {
+                    // Navigator.pushNamed(context, Myroutes.otpRoute);
+                  },
+                  color: Colors.yellowAccent,
+                  shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        color: Colors.black,
+                      ),
+                      borderRadius: BorderRadius.circular(60)),
+                  child: Text("Verify",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                      )),
+                ),
              ]
           ),
 
