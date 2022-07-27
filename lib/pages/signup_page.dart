@@ -44,7 +44,7 @@ class Signuppage extends StatelessWidget {
                   minWidth:350,
                   height: 50,
                   onPressed: () {
-                   // Navigator.pushNamed(context, Myroutes.open2Route);
+                   Navigator.pushNamed(context, Myroutes.VendorsignupRoute);
                   },
                   color: Colors.white,
                   shape: RoundedRectangleBorder(
@@ -61,7 +61,7 @@ class Signuppage extends StatelessWidget {
                   minWidth:350,
                   height: 50,
                   onPressed: () {
-                   // Navigator.pushNamed(context, Myroutes.open2Route);
+                    Navigator.pushNamed(context, Myroutes.deliveryagesignupRoute);
                   },
                   color: Colors.lightGreenAccent,
                   shape: RoundedRectangleBorder(

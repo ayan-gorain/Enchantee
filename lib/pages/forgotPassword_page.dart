@@ -12,7 +12,16 @@ class Forgotpasswordpage extends StatelessWidget {
           width:double.infinity,
           child: Column(
               children:<Widget>[
-                SizedBox(height:40),
+                AppBar(
+                  title: Text(''),// You can add title here
+                  leading: new IconButton(
+                    icon: new Icon(Icons.arrow_back_ios, color: Colors.grey),
+                    onPressed: () => Navigator.of(context).pop(),
+                  ),
+                  backgroundColor: Colors.white.withOpacity(0.3), //You can make this transparent
+                  elevation: 0.0, //No shadow
+                ),
+                SizedBox(height:20),
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text("Forgot Password",
@@ -23,8 +32,8 @@ class Forgotpasswordpage extends StatelessWidget {
                           fontWeight: FontWeight.w800)),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(70.0),
-                  child: Image.asset("assets/images/for.png",),
+                  padding: const EdgeInsets.all(30.0),
+                  child: Image.asset("assets/images/for.png", fit: BoxFit.cover,),
                 ),
 
                 Text("Did someone forgot the password?",
@@ -33,14 +42,14 @@ class Forgotpasswordpage extends StatelessWidget {
                           fontSize: 20,
                           color: Colors.black,
                           fontWeight: FontWeight.w500)),
-                SizedBox(height: 30,),
+                SizedBox(height: 10,),
                 Text("That's ok",
                       style: TextStyle(
                         inherit: true,
                           fontSize: 20,
                           color: Colors.black,
                           fontWeight: FontWeight.w300)),
-                SizedBox(height: 10,),
+                SizedBox(height: 5,),
                 Text("Just enter the email address you've ",
                       style: TextStyle(
                         inherit: true,
@@ -59,7 +68,7 @@ class Forgotpasswordpage extends StatelessWidget {
                           fontSize: 20,
                           color: Colors.black,
                           fontWeight: FontWeight.w300)),
-                SizedBox(height: 40,),
+                SizedBox(height: 20,),
                 const Padding(
                   padding: EdgeInsets.only(left:30,right: 30,top: 10),
                   child: TextField(

@@ -17,10 +17,19 @@ class _otppageState extends State<otppage> {
           width:double.infinity,
           child: Column(
               children: <Widget>[
-                const SizedBox(height: 30),
+                const SizedBox(height: 5),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
+              AppBar(
+              title: Text(''),// You can add title here
+              leading: new IconButton(
+                icon: new Icon(Icons.arrow_back_ios, color: Colors.grey),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+              backgroundColor: Colors.white.withOpacity(0.3), //You can make this transparent
+              elevation: 0.0, //No shadow
+            ),
                 Text("Verification",
               textAlign: TextAlign.center,
               style: TextStyle(

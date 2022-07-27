@@ -1,5 +1,7 @@
+import 'package:enchante/pages/Deliviryage_signup.dart';
 import 'package:enchante/pages/forgotPassword_page.dart';
 import 'package:enchante/pages/otp_page.dart';
+import 'package:enchante/pages/vendor_signup.dart';
 import 'package:flutter/material.dart';
 import 'package:enchante/pages/customers_signup.dart';
 import 'package:enchante/pages/first_page.dart';
@@ -27,6 +29,8 @@ class Myapp extends StatelessWidget {
         Myroutes.signupRoute: (context) =>Signuppage(),
         Myroutes.open2Route: (context) =>Open2page(),
         Myroutes.customersignupRoute: (context) =>Customersignupage(),
+        Myroutes.VendorsignupRoute: (context) =>Vendorsignupage(),
+        Myroutes.deliveryagesignupRoute: (context) =>deliveryagesignupage(),
         Myroutes.forgetpasswordRoute: (context) =>Forgotpasswordpage(),
         Myroutes.otpRoute: (context) =>otppage(),
 

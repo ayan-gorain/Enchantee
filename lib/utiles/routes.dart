@@ -5,6 +5,8 @@ class Myroutes {
   static String signupRoute = "/sign";
   static String open2Route= "/open2";
   static String customersignupRoute= "/cussignup";
+  static String VendorsignupRoute= "/vensignup";
+  static String deliveryagesignupRoute= "/delsignup";
   static String forgetpasswordRoute= "/forgot";
   static String otpRoute= "/otp";
 
