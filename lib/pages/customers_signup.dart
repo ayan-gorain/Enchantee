@@ -46,7 +46,7 @@ class _CustomersignupageState extends State<Customersignupage> {
                 ),
                 const SizedBox(height: 30),
                 const UserImagePicker(),
-                const SizedBox(height: 20),
+                const SizedBox(height: 40),
                 const Padding(
                   padding: EdgeInsets.only(left:30,right: 30,top: 10),
                   child: TextField(
@@ -54,36 +54,18 @@ class _CustomersignupageState extends State<Customersignupage> {
                       filled: true,
                       fillColor: Color.fromRGBO(191, 181, 180, 0.2),
                       prefixIcon : Icon(Icons.person),
-                      labelText: 'First Name',
+                      labelText: 'Name',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(30.0)),
                         borderSide: BorderSide(color: Colors.blue),
 
                     ),
-                      hintText: 'Enter your First Name',
+                      hintText: 'Enter your Full Name',
 
                     ),
                   ),
                 ),
-                const Padding(
-                  padding: const EdgeInsets.only(left:30,right: 30,top: 10),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Color.fromRGBO(191, 181, 180, 0.2),
-                        prefixIcon : Icon(Icons.person),
-                        labelText: 'Last Name',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                          borderSide: BorderSide(color: Colors.blue),
 
-                        ),
-                        hintText: 'Enter your Last Name',
-
-                      ),
-
-                  ),
-                ),
                 Padding(
                   padding: EdgeInsets.only(left:30,right: 30,top: 10),
                   child: Container(
@@ -184,14 +166,14 @@ class _CustomersignupageState extends State<Customersignupage> {
                     ),
                   ),
                 ),
-                const SizedBox(height:20),
+                const SizedBox(height:40),
                 MaterialButton(
-                  minWidth: 300,
+                  minWidth: 220,
                   height: 50,
                   onPressed: () {
                     Navigator.pushNamed(context, Myroutes.otpRoute);
                   },
-                  color: Colors.yellowAccent,
+                  color: Color.fromRGBO(255, 153,240,1),
                   shape: RoundedRectangleBorder(
                       side: BorderSide(
                         color: Colors.black,
@@ -210,6 +192,7 @@ class _CustomersignupageState extends State<Customersignupage> {
 
     );
   }
+
   void _togglePasswordView() {
     setState(() {
       _isHidden = !_isHidden;

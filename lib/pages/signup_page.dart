@@ -29,7 +29,7 @@ class Signuppage extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushNamed(context, Myroutes.customersignupRoute);
                   },
-                  color: Colors.lightGreenAccent,
+                  color: Color.fromRGBO(102,255,178,1),
                   shape: RoundedRectangleBorder(
                       side: BorderSide(
                         color: Colors.black,

@@ -30,7 +30,7 @@ class _UserImagePickerState extends State<UserImagePicker> {
       context: context,
       builder: (BuildContext context) {
         return Container(
-          height: 200,
+          height: 300,
           color: Colors.white,
           child: Center(
             child: Column(
@@ -38,13 +38,36 @@ class _UserImagePickerState extends State<UserImagePicker> {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 ElevatedButton(
-                  child: const Text('Camera'),
+                  child: Text('Camera'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.green,
+                    // side: BorderSide(color: Colors.yellow, width: 5),
+                    textStyle: const TextStyle(
+                        color: Colors.white, fontSize: 25, fontStyle: FontStyle.normal),
+                    shape: BeveledRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    shadowColor: Colors.lightBlue,
+                  ),
                   onPressed: () => _pickImageC(),
                 ),
+                SizedBox(height: 50,),
                 ElevatedButton(
-                  child: const Text('Gallery'),
+                  child: Text('Gallary'),
+
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.green,
+                    // side: BorderSide(color: Colors.yellow, width: 5),
+                    textStyle: const TextStyle(
+                        color: Colors.white, fontSize: 25, fontStyle: FontStyle.normal),
+                    shape: BeveledRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    shadowColor: Colors.lightBlue,
+                  ),
                   onPressed: () => _pickImageG(),
-                )
+
+                ),
+
+
               ],
             ),
           ),
