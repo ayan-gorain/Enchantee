@@ -195,7 +195,7 @@ class _VendorsignupageState extends State<Vendorsignupage> {
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Color.fromRGBO(191, 181, 180, 0.2),
-                          prefixIcon : Icon(Icons.person),
+                          prefixIcon : Icon(Icons.password_sharp),
                           labelText: 'Password',
                           border: const OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -203,12 +203,15 @@ class _VendorsignupageState extends State<Vendorsignupage> {
 
                           ),
                           hintText: 'Enter Password here',
-                          suffix: InkWell(
-                            onTap: _togglePasswordView,
-                            child: Icon(
-                              _isHidden
-                                  ? Icons.visibility
-                                  : Icons.visibility_off,
+                          suffix: SizedBox(
+                            width: 40,
+                            child: InkWell(
+                              onTap: _togglePasswordView,
+                              child: Icon(
+                                _isHidden
+                                    ? Icons.visibility
+                                    : Icons.visibility_off, size: 18,
+                              ),
                             ),
                           ),
                         ),
@@ -222,7 +225,7 @@ class _VendorsignupageState extends State<Vendorsignupage> {
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Color.fromRGBO(191, 181, 180, 0.2),
-                          prefixIcon : Icon(Icons.person),
+                          prefixIcon : Icon(Icons.password_sharp),
                           labelText: 'Confirm Password',
                           border: const OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -230,12 +233,15 @@ class _VendorsignupageState extends State<Vendorsignupage> {
 
                           ),
                           hintText: 'Reconfirm your password',
-                          suffix: InkWell(
-                            onTap: _togglePasswordView1,
-                            child: Icon(
-                              _isHidden
-                                  ? Icons.visibility
-                                  : Icons.visibility_off,
+                          suffix:SizedBox(
+                            width: 40,
+                            child: InkWell(
+                              onTap: _togglePasswordView1,
+                              child: Icon(
+                                _isHidden
+                                    ? Icons.visibility
+                                    : Icons.visibility_off, size: 18,
+                              ),
                             ),
                           ),
                         ),

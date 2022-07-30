@@ -121,7 +121,7 @@ class _CustomersignupageState extends State<Customersignupage> {
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Color.fromRGBO(191, 181, 180, 0.2),
-                      prefixIcon : Icon(Icons.person),
+                      prefixIcon : Icon(Icons.password_sharp),
                       labelText: 'Password',
                       border: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -129,12 +129,15 @@ class _CustomersignupageState extends State<Customersignupage> {
 
                       ),
                       hintText: 'Enter Password here',
-                      suffix: InkWell(
-                        onTap: _togglePasswordView,
-                        child: Icon(
-                          _isHidden
-                              ? Icons.visibility
-                              : Icons.visibility_off,
+                      suffix:SizedBox(
+                        width: 40,
+                        child: InkWell(
+                          onTap: _togglePasswordView,
+                          child: Icon(
+                            _isHidden
+                                ? Icons.visibility
+                                : Icons.visibility_off, size: 18,
+                          ),
                         ),
                       ),
                     ),
@@ -148,7 +151,7 @@ class _CustomersignupageState extends State<Customersignupage> {
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Color.fromRGBO(191, 181, 180, 0.2),
-                      prefixIcon : Icon(Icons.person),
+                      prefixIcon : Icon(Icons.password_sharp),
                       labelText: 'Confirm Password',
                       border: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -156,12 +159,15 @@ class _CustomersignupageState extends State<Customersignupage> {
 
                       ),
                       hintText: 'Reconfirm your password',
-                      suffix: InkWell(
-                        onTap: _togglePasswordView1,
-                        child: Icon(
-                          _isHidden
-                              ? Icons.visibility
-                              : Icons.visibility_off,
+                      suffix: SizedBox(
+                        width: 40,
+                        child: InkWell(
+                          onTap: _togglePasswordView1,
+                          child: Icon(
+                            _isHidden
+                                ? Icons.visibility
+                                : Icons.visibility_off, size: 18,
+                          ),
                         ),
                       ),
                     ),
@@ -172,7 +178,7 @@ class _CustomersignupageState extends State<Customersignupage> {
                   minWidth: 220,
                   height: 50,
                   onPressed: () {
-                    Navigator.pushNamed(context, Myroutes.otpRoute);
+                    Navigator.pushNamed(context, Myroutes.genderdateRoute);
                   },
                   color: Color.fromRGBO(255, 153,240,1),
                   shape: RoundedRectangleBorder(
@@ -180,7 +186,7 @@ class _CustomersignupageState extends State<Customersignupage> {
                         color: Colors.black,
                       ),
                       borderRadius: BorderRadius.circular(60)),
-                  child: Text("Sign up",
+                  child: Text("Next",
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                       )),

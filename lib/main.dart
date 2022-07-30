@@ -1,5 +1,6 @@
 import 'package:enchante/pages/Deliviryage_signup.dart';
 import 'package:enchante/pages/forgotPassword_page.dart';
+import 'package:enchante/pages/gender_date_page.dart';
 import 'package:enchante/pages/otp_page.dart';
 import 'package:enchante/pages/vendor_signup.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +34,7 @@ class Myapp extends StatelessWidget {
         Myroutes.deliveryagesignupRoute: (context) =>deliveryagesignupage(),
         Myroutes.forgetpasswordRoute: (context) =>Forgotpasswordpage(),
         Myroutes.otpRoute: (context) =>otppage(),
+        Myroutes.genderdateRoute: (context) =>Genderdatepage(),
 
       },
     );

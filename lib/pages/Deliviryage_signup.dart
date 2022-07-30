@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gender_picker/source/enums.dart';
-import 'package:gender_picker/source/gender_picker.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import '../utiles/routes.dart';
 import '../widget/user_image_picker.dart';
@@ -111,6 +109,24 @@ class _deliveryagesignupageState extends State<deliveryagesignupage> {
                 ),
               ),
             ),
+        Padding(
+          padding: EdgeInsets.only(left:30,right: 30,top: 10),
+          child: TextField(
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: Color.fromRGBO(191, 181, 180, 0.2),
+              prefixIcon : Icon(Icons.document_scanner_outlined),
+              labelText: 'Addhar number/Pan number',
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                borderSide: BorderSide(color: Colors.blue),
+
+              ),
+              hintText: 'Enter your Addhar /Pan number',
+
+            ),
+          ),
+        ),
             Padding(
               padding: const EdgeInsets.only(left:30,right: 30,top: 10),
               child: TextField(
@@ -120,7 +136,7 @@ class _deliveryagesignupageState extends State<deliveryagesignupage> {
 
                   filled: true,
                   fillColor: Color.fromRGBO(191, 181, 180, 0.2),
-                  prefixIcon : Icon(Icons.person),
+                  prefixIcon : Icon(Icons.password_sharp),
                   labelText: 'Password',
                   border: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -150,7 +166,7 @@ class _deliveryagesignupageState extends State<deliveryagesignupage> {
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: Color.fromRGBO(191, 181, 180, 0.2),
-                  prefixIcon : Icon(Icons.person),
+                  prefixIcon : Icon(Icons.password_sharp),
                   labelText: 'Confirm Password',
                   border: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -173,13 +189,12 @@ class _deliveryagesignupageState extends State<deliveryagesignupage> {
               ),
             ),
 
-            getWidget(true,false),
-            const SizedBox(height:30),
+            const SizedBox(height:20),
             MaterialButton(
               minWidth: 220,
               height: 50,
               onPressed: () {
-                Navigator.pushNamed(context, Myroutes.otpRoute);
+                Navigator.pushNamed(context, Myroutes.genderdateRoute);
               },
               color: const Color.fromRGBO(255, 153,240,1),
               shape: RoundedRectangleBorder(
@@ -187,7 +202,7 @@ class _deliveryagesignupageState extends State<deliveryagesignupage> {
                     color: Colors.black,
                   ),
                   borderRadius: BorderRadius.circular(60)),
-              child: const Text("Sign up",
+              child: const Text("Next",
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                   )),
@@ -211,35 +226,5 @@ class _deliveryagesignupageState extends State<deliveryagesignupage> {
     });
   }
 
-  Widget getWidget(bool showOtherGender, bool alignVertical) {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 40),
-      alignment: Alignment.center,
-      child: GenderPickerWithImage(
-        showOtherGender: showOtherGender,
-        verticalAlignedText: alignVertical,
 
-        // to show what's selected on app opens, but by default it's Male
-        selectedGender: null,
-        selectedGenderTextStyle: const TextStyle(
-            color: Color(0xFF8b32a8), fontWeight: FontWeight.bold),
-        unSelectedGenderTextStyle: const TextStyle(
-            color: Colors.black, fontWeight: FontWeight.normal),
-        onChanged: (Gender? gender) {
-          print(gender);
-        },
-        //Alignment between icons
-        equallyAligned: true,
-
-        animationDuration: const Duration(milliseconds: 300),
-        isCircular: true,
-        // default : true,
-        opacityOfGradient: 0.4,
-        padding: const EdgeInsets.all(3),
-        size: 50, //default : 40
-      ),
-
-    );
-
-  }
 }

@@ -18,6 +18,8 @@ class Openpage extends StatelessWidget {
               padding: const EdgeInsets.all(40.0),
               child: Image.asset(
                 "assets/images/log.jpg",
+                width: 300,
+                height: 300,
                 fit: BoxFit.cover,
               ),
             ),
