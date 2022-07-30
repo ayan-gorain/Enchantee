@@ -91,19 +91,29 @@ class _UserImagePickerState extends State<UserImagePicker> {
                 child: Image.asset('assets/images/download.png'),
                 borderRadius: BorderRadius.circular(50.0),
               ),
-              backgroundImage: _pickedImage !=null ?  FileImage(_pickedImage):null,
+              foregroundImage: FileImage(_pickedImage
+              )
 
             ),
             Positioned(
-                left: 56,
-                bottom:60,
-                child: IconButton(
-                  onPressed: _menu,
-                  icon: const Icon(
-                    Icons.camera_alt,
-                    size: 30,
+                left: 68,
+                bottom:68,
+                child: CircleAvatar(
+                  radius: 16,
+                  backgroundColor: Color(0xff94d500),
+                  child: IconButton(
+                    icon: const Icon(
+                      Icons.camera_alt,size: 16,
+                      color: Colors.white,
+                    ),
+                    onPressed: _menu
+                    ,
                   ),
-                ))
+                ),
+
+
+
+            )
           ],
 
         ),

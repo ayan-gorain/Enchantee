@@ -14,14 +14,15 @@ class Customersignupage extends StatefulWidget {
 
 class _CustomersignupageState extends State<Customersignupage> {
   bool _isHidden = true;
+  bool _isHidden1 = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body:SingleChildScrollView(
-        child:Container(
-          height:MediaQuery.of(context).size.height,
-          width:double.infinity,
+      body:SizedBox(
+        height:MediaQuery.of(context).size.height,
+        width:double.infinity,
+          child: SingleChildScrollView(
             child: Column(
               children:<Widget> [
 
@@ -156,7 +157,7 @@ class _CustomersignupageState extends State<Customersignupage> {
                       ),
                       hintText: 'Reconfirm your password',
                       suffix: InkWell(
-                        onTap: _togglePasswordView,
+                        onTap: _togglePasswordView1,
                         child: Icon(
                           _isHidden
                               ? Icons.visibility
@@ -187,7 +188,7 @@ class _CustomersignupageState extends State<Customersignupage> {
               ],
 
             ),
-        ),
+          ),
       ),
 
     );
@@ -196,6 +197,11 @@ class _CustomersignupageState extends State<Customersignupage> {
   void _togglePasswordView() {
     setState(() {
       _isHidden = !_isHidden;
+    });
+  }
+  void _togglePasswordView1() {
+    setState(() {
+      _isHidden1 = !_isHidden1;
     });
   }
 }
