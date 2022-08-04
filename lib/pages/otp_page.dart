@@ -1,3 +1,4 @@
+import 'package:enchante/utiles/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 class otppage extends StatefulWidget {
@@ -160,7 +161,7 @@ class _otppageState extends State<otppage> {
                     minWidth: 200,
                     height: 50,
                     onPressed: () {
-                      // Navigator.pushNamed(context, Myroutes.otpRoute);
+                       Navigator.pushNamed(context, Myroutes.onboardingRoute);
                     },
                     color: Color.fromRGBO(51,255,255,1),
                     shape: RoundedRectangleBorder(

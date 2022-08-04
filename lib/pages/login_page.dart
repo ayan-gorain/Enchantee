@@ -100,7 +100,7 @@ class _LoginpageState extends State<Loginpage> {
                     minWidth: 350,
                     height: 50,
                     onPressed: () {
-                      Navigator.pushNamed(context, Myroutes.open2Route);
+                      Navigator.pushNamed(context, Myroutes.otpRoute);
                     },
                     color: Colors.deepOrangeAccent,
                     shape: RoundedRectangleBorder(

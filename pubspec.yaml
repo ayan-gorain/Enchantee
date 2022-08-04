@@ -45,6 +45,8 @@ dependencies:
   flutter_linear_datepicker: ^2.0.4
   intl: ^0.16.1
 
+  smooth_page_indicator: ^1.0.0+2
+
 
 dev_dependencies:
   flutter_test:
