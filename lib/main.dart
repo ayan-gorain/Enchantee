@@ -1,13 +1,15 @@
-import 'package:enchante/pages/Deliviryage_signup.dart';
+import 'package:enchante/pages/deliveryagent/Deliviryage_signup.dart';
+import 'package:enchante/pages/deliveryagent/gender_date_1page.dart';
+import 'package:enchante/pages/deliveryagent/otp2_page.dart';
 import 'package:enchante/pages/forgotPassword_page.dart';
-import 'package:enchante/pages/gender_date_page.dart';
-import 'package:enchante/pages/onboarding_page.dart';
-import 'package:enchante/pages/otp_page.dart';
-import 'package:enchante/pages/vendor_signup.dart';
+import 'package:enchante/pages/customer/gender_date_page.dart';
+import 'package:enchante/pages/customer/onboarding_page.dart';
+import 'package:enchante/pages/customer/otp_page.dart';
+import 'package:enchante/pages/vendor/otp1_page.dart';
+import 'package:enchante/pages/vendor/vendor_signup.dart';
 import 'package:enchante/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
-import 'package:enchante/pages/customers_signup.dart';
-import 'package:enchante/pages/first_page.dart';
+import 'package:enchante/pages/customer/customers_signup.dart';
 import 'package:enchante/utiles/routes.dart';
 import 'pages/open_page.dart';
 import 'pages/open1__page.dart';
@@ -36,7 +38,10 @@ class Myapp extends StatelessWidget {
         Myroutes.deliveryagesignupRoute: (context) =>deliveryagesignupage(),
         Myroutes.forgetpasswordRoute: (context) =>Forgotpasswordpage(),
         Myroutes.otpRoute: (context) =>otppage(),
+        Myroutes.otp1Route: (context) =>otppage1(),
+        Myroutes.otp2Route: (context) =>otppage2(),
         Myroutes.genderdateRoute: (context) =>Genderdatepage(),
+        Myroutes.genderdate1Route: (context) =>Genderdate1page(),
         Myroutes.onboardingRoute: (context) =>Onboardingpage(),
 
       },

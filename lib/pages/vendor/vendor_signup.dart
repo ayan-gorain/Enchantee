@@ -3,8 +3,8 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
-import '../utiles/routes.dart';
-import '../widget/user_image_picker.dart';
+import '../../utiles/routes.dart';
+import '../../widget/user_image_picker.dart';
 
 class Vendorsignupage  extends StatefulWidget {
   const Vendorsignupage ({Key? key}) : super(key: key);
@@ -252,7 +252,7 @@ class _VendorsignupageState extends State<Vendorsignupage> {
                       minWidth: 220,
                       height: 50,
                       onPressed: () {
-                        Navigator.pushNamed(context, Myroutes.otpRoute);
+                        Navigator.pushNamed(context, Myroutes.otp1Route);
                       },
                       color: Color.fromRGBO(255, 153,240,1),
                       shape: RoundedRectangleBorder(

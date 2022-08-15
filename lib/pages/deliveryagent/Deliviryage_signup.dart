@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
-import '../utiles/routes.dart';
-import '../widget/user_image_picker.dart';
+import '../../utiles/routes.dart';
+import '../../widget/user_image_picker.dart';
 class deliveryagesignupage  extends StatefulWidget {
   const deliveryagesignupage ({Key? key}) : super(key: key);
 
@@ -194,7 +194,7 @@ class _deliveryagesignupageState extends State<deliveryagesignupage> {
               minWidth: 220,
               height: 50,
               onPressed: () {
-                Navigator.pushNamed(context, Myroutes.genderdateRoute);
+                Navigator.pushNamed(context, Myroutes.genderdate1Route);
               },
               color: const Color.fromRGBO(255, 153,240,1),
               shape: RoundedRectangleBorder(

@@ -9,7 +9,10 @@ class Myroutes {
   static String deliveryagesignupRoute= "/delsignup";
   static String forgetpasswordRoute= "/forgot";
   static String otpRoute= "/otp";
+  static String otp1Route= "/otp1";
+  static String otp2Route= "/otp2";
   static String genderdateRoute= "/gendate";
+  static String genderdate1Route= "/gendate1";
   static String onboardingRoute= "/onboard";
 
 }
