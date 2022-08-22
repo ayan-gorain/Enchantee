@@ -1,20 +1,20 @@
 import 'package:enchante/pages/deliveryagent/Deliviryage_signup.dart';
 import 'package:enchante/pages/deliveryagent/gender_date_1page.dart';
 import 'package:enchante/pages/deliveryagent/otp2_page.dart';
-import 'package:enchante/pages/forgotPassword_page.dart';
+import 'package:enchante/pages/commonpages/forgotPassword_page.dart';
 import 'package:enchante/pages/customer/gender_date_page.dart';
 import 'package:enchante/pages/customer/onboarding_page.dart';
 import 'package:enchante/pages/customer/otp_page.dart';
 import 'package:enchante/pages/vendor/otp1_page.dart';
 import 'package:enchante/pages/vendor/vendor_signup.dart';
-import 'package:enchante/pages/welcome_page.dart';
+import 'package:enchante/pages/customer/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:enchante/pages/customer/customers_signup.dart';
 import 'package:enchante/utiles/routes.dart';
-import 'pages/open_page.dart';
-import 'pages/open1__page.dart';
-import 'pages/login_page.dart';
-import 'pages/signup_page.dart';
+import 'pages/commonpages/open_page.dart';
+import 'pages/commonpages/open1__page.dart';
+import 'pages/commonpages/login_page.dart';
+import 'pages/commonpages/signup_page.dart';
 
 void main() {
   runApp(Myapp());
