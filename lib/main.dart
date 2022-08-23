@@ -27,7 +27,7 @@ class Myapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        "/": (context) => welcomepage(),
+        "/": (context) => Openpage(),
         Myroutes.openRoute: (context) =>Openpage(),
         Myroutes.open1Route: (context) => Open1page(),
         Myroutes.loginRoute: (context) =>Loginpage(),
