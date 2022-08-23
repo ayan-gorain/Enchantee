@@ -7,7 +7,7 @@ import 'package:enchante/pages/customer/onboarding_page.dart';
 import 'package:enchante/pages/customer/otp_page.dart';
 import 'package:enchante/pages/vendor/otp1_page.dart';
 import 'package:enchante/pages/vendor/vendor_signup.dart';
-import 'package:enchante/pages/customer/welcome_page.dart';
+import 'package:enchante/pages/customer/navigation/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:enchante/pages/customer/customers_signup.dart';
 import 'package:enchante/utiles/routes.dart';
@@ -27,7 +27,7 @@ class Myapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        "/": (context) => Openpage(),
+        "/": (context) => welcomepage(),
         Myroutes.openRoute: (context) =>Openpage(),
         Myroutes.open1Route: (context) => Open1page(),
         Myroutes.loginRoute: (context) =>Loginpage(),
