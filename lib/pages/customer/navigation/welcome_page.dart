@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 class welcomepage extends StatefulWidget {
   const welcomepage({Key? key}) : super(key: key);
 
@@ -9,9 +10,11 @@ class welcomepage extends StatefulWidget {
 }
 
 class _welcomepageState extends State<welcomepage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         title: const Text("Enchante",
         style: TextStyle(
@@ -21,7 +24,7 @@ class _welcomepageState extends State<welcomepage> {
         ),
           actions: <Widget>[
             TextButton.icon(
-                label: Text('Adress',
+                label: Text('Address',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
@@ -201,11 +204,12 @@ class _welcomepageState extends State<welcomepage> {
 
                 ],),
 
-
             ],
+
           ),
         ),
       ),
+
 
     );
   }

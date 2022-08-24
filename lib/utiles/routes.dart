@@ -4,6 +4,7 @@ class Myroutes {
   static String loginRoute = "/login";
   static String signupRoute = "/sign";
   static String welcomeRoute= "/welc";
+  static String navmainRoute= "/navg";
   static String customersignupRoute= "/cussignup";
   static String VendorsignupRoute= "/vensignup";
   static String deliveryagesignupRoute= "/delsignup";

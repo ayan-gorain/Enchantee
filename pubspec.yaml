@@ -46,6 +46,7 @@ dependencies:
   intl: ^0.16.1
   carousel_slider: ^4.1.1
   smooth_page_indicator: ^1.0.0+2
+  curved_navigation_bar: ^1.0.3
 
 
 dev_dependencies:

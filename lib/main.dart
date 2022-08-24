@@ -1,3 +1,4 @@
+import 'package:enchante/pages/customer/navigation/main_page.dart';
 import 'package:enchante/pages/deliveryagent/Deliviryage_signup.dart';
 import 'package:enchante/pages/deliveryagent/gender_date_1page.dart';
 import 'package:enchante/pages/deliveryagent/otp2_page.dart';
@@ -27,7 +28,7 @@ class Myapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        "/": (context) => Openpage(),
+        "/": (context) =>Openpage(),
         Myroutes.openRoute: (context) =>Openpage(),
         Myroutes.open1Route: (context) => Open1page(),
         Myroutes.loginRoute: (context) =>Loginpage(),
@@ -43,6 +44,7 @@ class Myapp extends StatelessWidget {
         Myroutes.genderdateRoute: (context) =>Genderdatepage(),
         Myroutes.genderdate1Route: (context) =>Genderdate1page(),
         Myroutes.onboardingRoute: (context) =>Onboardingpage(),
+        Myroutes.navmainRoute: (context) =>BottomNavBar(),
 
       },
     );
