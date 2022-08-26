@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:enchante/utiles/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -108,7 +109,7 @@ class _welcomepageState extends State<welcomepage> {
                     minWidth:160,
                     height: 70,
                     onPressed: () {
-                      //Navigator.pushNamed(context, Myroutes.signupRoute );
+                      Navigator.pushNamed(context, Myroutes.productshowRoute );
                     },
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -125,7 +126,7 @@ class _welcomepageState extends State<welcomepage> {
                     minWidth:160,
                     height: 70,
                     onPressed: () {
-                      //Navigator.pushNamed(context, Myroutes.signupRoute );
+                      Navigator.pushNamed(context, Myroutes.productshowRoute );
                     },
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -150,7 +151,7 @@ class _welcomepageState extends State<welcomepage> {
                     minWidth:160,
                     height: 70,
                     onPressed: () {
-                      //Navigator.pushNamed(context, Myroutes.signupRoute );
+                      Navigator.pushNamed(context, Myroutes.productshowRoute );
                     },
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -167,7 +168,7 @@ class _welcomepageState extends State<welcomepage> {
                     minWidth:160,
                     height: 70,
                     onPressed: () {
-                      //Navigator.pushNamed(context, Myroutes.signupRoute );
+                      Navigator.pushNamed(context, Myroutes.productshowRoute );
                     },
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -188,7 +189,7 @@ class _welcomepageState extends State<welcomepage> {
                     minWidth:160,
                     height: 70,
                     onPressed: () {
-                      //Navigator.pushNamed(context, Myroutes.signupRoute );
+                      Navigator.pushNamed(context, Myroutes.productshowRoute);
                     },
                     color: Colors.white,
                     shape: RoundedRectangleBorder(

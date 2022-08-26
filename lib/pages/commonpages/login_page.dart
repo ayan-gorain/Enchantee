@@ -60,6 +60,8 @@ class _LoginpageState extends State<Loginpage> {
                         ),
                         hintText: 'Enter your First Name',
 
+
+
                       ),
                     ),
                   ),
@@ -69,6 +71,7 @@ class _LoginpageState extends State<Loginpage> {
                     child: TextField(
                       obscureText: _isHidden,
                       decoration: InputDecoration(
+
                         filled: true,
                         fillColor: Color.fromRGBO(191, 181, 180, 0.2),
                         prefixIcon : Icon(Icons.person),

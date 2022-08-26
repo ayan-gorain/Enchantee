@@ -123,7 +123,7 @@ class _OnboardingpageState extends State<Onboardingpage> {
               minimumSize: const Size.fromHeight(80)
             ),
             onPressed: () async{
-              Navigator.pushNamed(context, Myroutes.welcomeRoute);}, child: const Text("Get Started",
+              Navigator.pushNamed(context, Myroutes.navmainRoute);}, child: const Text("Get Started",
             style:TextStyle(fontSize: 24))):
         Container(
             height:80,
