@@ -41,7 +41,11 @@ class _welcomepageState extends State<welcomepage> {
 
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: SingleChildScrollView(
+
+        )
+      ),
       body: SizedBox(
         child: Padding(
           padding: const EdgeInsets.all(10.0),

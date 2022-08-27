@@ -1,4 +1,3 @@
-import 'package:enchante/pages/customer/navigation/profile.dart';
 import 'package:enchante/pages/customer/navigation/serach.dart';
 import 'package:enchante/pages/customer/navigation/welcome_page.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +15,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
   var PagesAll=[welcomepage(),
     serachpage(),
-    profilepage(),
+
     helppage(),];
   var myindex=0;
   @override
@@ -29,8 +28,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
           items: <Widget>[
             Icon((myindex==0)?Icons.home_outlined :Icons.home_outlined),
             Icon((myindex==1)?Icons.list :Icons.list),
-            Icon((myindex==2)?Icons.wallet_outlined:Icons.wallet_outlined),
-            Icon((myindex==3)?Icons.person_outline :Icons.person_outline),
+
+            Icon((myindex==2)?Icons.person_outline :Icons.person_outline),
           ],
           color: Colors.orange,
           buttonBackgroundColor: Colors.lightBlueAccent,
