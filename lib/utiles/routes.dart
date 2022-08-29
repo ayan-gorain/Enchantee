@@ -16,5 +16,6 @@ class Myroutes {
   static String genderdate1Route= "/gendate1";
   static String onboardingRoute= "/onboard";
   static String productshowRoute= "/proshow";
+  static String strviewRoute= "/strv";
 
 }

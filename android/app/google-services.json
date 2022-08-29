@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "311019252976",
+    "project_id": "enchantee-bed69",
+    "storage_bucket": "enchantee-bed69.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:311019252976:android:9d6dd001cdf5578a63a635",
+        "android_client_info": {
+          "package_name": "com.groupproject.enchante"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "311019252976-9tnjje5q1bpvkmogs3vma0hn9hpe8a8v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLr07-1kNC4ptXgVW9cJeU6ZlPK2icJqo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "311019252976-9tnjje5q1bpvkmogs3vma0hn9hpe8a8v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

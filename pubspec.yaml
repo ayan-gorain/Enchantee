@@ -43,12 +43,31 @@ dependencies:
   dropdown_button2: ^1.7.1
   gender_picker: ^1.1.0
   flutter_linear_datepicker: ^2.0.4
-  intl: ^0.16.1
+  intl: ^0.17.0
   carousel_slider: ^4.1.1
   smooth_page_indicator: ^1.0.0+2
   curved_navigation_bar: ^1.0.3
   provider: ^6.0.3
   badges: ^2.0.3
+  open_street_map_search_and_pick: ^0.0.9
+
+
+
+  firebase_core: ^1.21.1
+  firebase_analytics: ^9.3.3
+  firebase_auth: ^3.7.0
+  cloud_firestore: ^3.4.6
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -61,7 +80,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^1.0.0
+  flutter_lints: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -145,7 +145,7 @@ class helppage extends StatelessWidget {
                    minWidth:350,
                    height: 70,
                    onPressed: () {
-                     Navigator.pushNamed(context, Myroutes.signupRoute);
+                     Navigator.pushNamed(context, Myroutes.open1Route);
                    },
                    color: Colors.white,
                    shape: RoundedRectangleBorder(
@@ -157,10 +157,9 @@ class helppage extends StatelessWidget {
                    child: Text("Log out",
                        style: TextStyle(
                          fontWeight: FontWeight.w500,
-
-
                        )),
                  ),
+                 SizedBox(height: 40,),
 
 
                ],

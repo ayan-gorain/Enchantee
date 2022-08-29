@@ -1,5 +1,6 @@
 import 'package:enchante/pages/customer/navigation/main_page.dart';
 import 'package:enchante/pages/customer/product_list.dart';
+import 'package:enchante/pages/customer/search_places_screen.dart';
 import 'package:enchante/pages/deliveryagent/Deliviryage_signup.dart';
 import 'package:enchante/pages/deliveryagent/gender_date_1page.dart';
 import 'package:enchante/pages/deliveryagent/otp2_page.dart';
@@ -47,6 +48,7 @@ class Myapp extends StatelessWidget {
         Myroutes.onboardingRoute: (context) =>Onboardingpage(),
         Myroutes.navmainRoute: (context) =>BottomNavBar(),
         Myroutes.productshowRoute: (context) =>ProductlistPage(),
+        Myroutes.strviewRoute: (context) =>screachplacepage(),
 
       },
     );
