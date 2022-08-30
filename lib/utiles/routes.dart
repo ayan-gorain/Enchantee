@@ -17,5 +17,6 @@ class Myroutes {
   static String onboardingRoute= "/onboard";
   static String productshowRoute= "/proshow";
   static String strviewRoute= "/strv";
+  static String splashRoute= "/splash";
 
 }

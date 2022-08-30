@@ -50,6 +50,7 @@ dependencies:
   provider: ^6.0.3
   badges: ^2.0.3
   open_street_map_search_and_pick: ^0.0.9
+  lottie: ^1.4.2
 
 
 
@@ -74,6 +75,12 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+
+
+
+
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
