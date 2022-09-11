@@ -1,8 +1,12 @@
 import 'package:enchante/utiles/routes.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../customer/onboarding_page.dart';
 
 class Loginpage extends StatefulWidget {
   @override
@@ -10,6 +14,9 @@ class Loginpage extends StatefulWidget {
 }
 
 class _LoginpageState extends State<Loginpage> {
+  late String _email,_password;
+  final auth=FirebaseAuth.instance;
+
   final _formKey=GlobalKey<FormState>();
   bool _isHidden = true;
 
@@ -55,17 +62,23 @@ class _LoginpageState extends State<Loginpage> {
                           filled: true,
                           fillColor: Color.fromRGBO(191, 181, 180, 0.2),
                           prefixIcon : Icon(Icons.person),
-                          labelText: 'First Name',
+                          labelText: 'Email',
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(30.0)),
                             borderSide: BorderSide(color: Colors.blue),
 
                           ),
-                          hintText: 'Enter your First Name',
+                          hintText: 'Enter your Email',
 
 
 
                         ),
+                        onChanged: (value){
+                          setState(() {
+                            _email=value.trim();
+                          });
+                        },
+
                         validator: (value){
                           if(value!.isEmpty){
                             return "name cannot be empty";
@@ -104,6 +117,11 @@ class _LoginpageState extends State<Loginpage> {
                             ),
                           ),
                         ),
+                        onChanged: (value){
+                          setState(() {
+                            _password=value.trim();
+                          });
+                        },
                         validator: (value){
                           if(value!.isEmpty){
                             return "Password cannot be empty";
@@ -121,8 +139,10 @@ class _LoginpageState extends State<Loginpage> {
                       height: 50,
                       onPressed: () {
                       if(_formKey.currentState!.validate()) {
-                        Navigator.pushNamed(context, Myroutes.otpRoute);
+                        auth.signInWithEmailAndPassword(email: _email, password: _password);
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>Onboardingpage()));
                       }
+
                       },
                       color: Colors.deepOrangeAccent,
                       shape: RoundedRectangleBorder(
@@ -142,6 +162,7 @@ class _LoginpageState extends State<Loginpage> {
                         Padding(
                           padding: const EdgeInsets.only(left:190),
                           child: TextButton(onPressed: () {
+
                             Navigator.pushNamed(context, Myroutes.forgetpasswordRoute);
                           },
                             child: Text(

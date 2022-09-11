@@ -1,9 +1,14 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:enchante/pages/deliveryagent/gender_date_1page.dart';
 import 'package:enchante/utiles/routes.dart';
 import 'package:enchante/widget/user_image_picker.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:image_picker/image_picker.dart';
 
+import 'gender_date_page.dart';
 
 class Customersignupage extends StatefulWidget {
   const Customersignupage({Key? key}) : super(key: key);
@@ -13,224 +18,233 @@ class Customersignupage extends StatefulWidget {
 }
 
 class _CustomersignupageState extends State<Customersignupage> {
-  final _formKey=GlobalKey<FormState>();
+  CollectionReference users = FirebaseFirestore.instance.collection('users');
+
+  late String _email, _password;
+  final auth = FirebaseAuth.instance;
+  var loading = false;
+
+  final _formKey = GlobalKey<FormState>();
   bool _isHidden = true;
   bool _isHidden1 = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body:SizedBox(
-        height:MediaQuery.of(context).size.height,
-        width:double.infinity,
-          child: SingleChildScrollView(
-            child: Form(
-              key: _formKey,
-              child: Column(
-                children:<Widget> [
-
-                  SizedBox(height:10),
-                  const Padding(
-                    padding: EdgeInsets.only(right:150,top:30),
-                    child: Text("Welcome,",
-                        style: TextStyle(
-                            inherit: true,
-                            fontSize: 50,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w800)),
+      body: SizedBox(
+        height: MediaQuery.of(context).size.height,
+        width: double.infinity,
+        child: SingleChildScrollView(
+          child: Form(
+            key: _formKey,
+            child: Column(
+              children: <Widget>[
+                SizedBox(height: 10),
+                const Padding(
+                  padding: EdgeInsets.only(right: 150, top: 30),
+                  child: Text("Welcome,",
+                      style: TextStyle(
+                          inherit: true,
+                          fontSize: 50,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w800)),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(right: 150, top: 10),
+                  child: Text("Signup as a customer",
+                      style: TextStyle(
+                          inherit: true,
+                          fontSize: 23,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w300)),
+                ),
+                const SizedBox(height: 30),
+                const UserImagePicker(),
+                const SizedBox(height: 40),
+                Padding(
+                  padding: EdgeInsets.only(left: 30, right: 30, top: 10),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color.fromRGBO(191, 181, 180, 0.2),
+                      prefixIcon: Icon(Icons.person),
+                      labelText: 'Name',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                        borderSide: BorderSide(color: Colors.blue),
+                      ),
+                      hintText: 'Enter your Full Name',
+                    ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "name cannot be empty";
+                      }
+                      return null;
+                    },
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(right:150,top:10),
-                    child: Text("Signup as a customer",
-                          style: TextStyle(
-                              inherit: true,
-                              fontSize: 23,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w300)),
-                  ),
-                  const SizedBox(height: 30),
-                  const UserImagePicker(),
-                  const SizedBox(height: 40),
-                  Padding(
-                    padding: EdgeInsets.only(left:30,right: 30,top: 10),
-                    child: TextFormField(
-                      decoration: InputDecoration(
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 30, right: 30, top: 10),
+                  child: Container(
+                    child: IntlPhoneField(
+                      keyboardType: TextInputType.number,
+                      decoration: const InputDecoration(
                         filled: true,
                         fillColor: Color.fromRGBO(191, 181, 180, 0.2),
-                        prefixIcon : Icon(Icons.person),
-                        labelText: 'Name',
+                        prefixIcon: Icon(Icons.person),
+                        labelText: 'Phone number',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(30.0)),
                           borderSide: BorderSide(color: Colors.blue),
-
+                        ),
+                        hintText: 'Enter your phone number',
                       ),
-                        hintText: 'Enter your Full Name',
-
-                      ),
-                      validator: (value){
-                        if(value!.isEmpty){
-                          return "name cannot be empty";
-                        }
-                        return null;
-
+                      initialCountryCode: 'IN',
+                      onChanged: (phone) {
+                        print(phone.completeNumber);
                       },
                     ),
                   ),
-
-                  Padding(
-                    padding: EdgeInsets.only(left:30,right: 30,top: 10),
-                    child: Container(
-                      child: IntlPhoneField(
-                        keyboardType: TextInputType.number,
-                        decoration: const InputDecoration(
-                          filled: true,
-                          fillColor: Color.fromRGBO(191, 181, 180, 0.2),
-                          prefixIcon : Icon(Icons.person),
-                          labelText: 'Phone number',
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                            borderSide: BorderSide(color: Colors.blue),
-
-                          ),
-                          hintText: 'Enter your phone number',
-
-                        ),
-
-                        initialCountryCode: 'IN',
-                        onChanged: (phone) {
-                          print(phone.completeNumber);
-                        },
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 30, right: 30, top: 10),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color.fromRGBO(191, 181, 180, 0.2),
+                      prefixIcon: Icon(Icons.mail_outline),
+                      labelText: 'Email',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                        borderSide: BorderSide(color: Colors.blue),
                       ),
+                      hintText: 'Enter your Email',
                     ),
-                  ),
-                   Padding(
-                    padding: EdgeInsets.only(left:30,right: 30,top: 10),
-                    child: TextFormField(
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Color.fromRGBO(191, 181, 180, 0.2),
-                          prefixIcon : Icon(Icons.mail_outline),
-                          labelText: 'Email',
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                            borderSide: BorderSide(color: Colors.blue),
-
-                          ),
-                          hintText: 'Enter your Email',
-
-                        ),
-                      validator: (value){
-                        if(value!.isEmpty){
-                          return "name cannot be empty";
-                        }
-                        return null;
-
-                      },
-                      ),
-
-                  ),
-
-
-                  Padding(
-                    padding: const EdgeInsets.only(left:30,right: 30,top: 10),
-                    child: TextFormField(
-                      obscureText: _isHidden,
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Color.fromRGBO(191, 181, 180, 0.2),
-                        prefixIcon : Icon(Icons.password_sharp),
-                        labelText: 'Password',
-                        border: const OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                          borderSide: BorderSide(color: Colors.blue),
-
-                        ),
-                        hintText: 'Enter Password here',
-                        suffix:SizedBox(
-                          width: 40,
-                          child: InkWell(
-                            onTap: _togglePasswordView,
-                            child: Icon(
-                              _isHidden
-                                  ? Icons.visibility
-                                  : Icons.visibility_off, size: 18,
-                            ),
-                          ),
-                        ),
-                      ),
-                      validator: (value){
-                        if(value!.isEmpty){
-                          return "name cannot be empty";
-                        }
-                        return null;
-
-                      },
-
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left:30,right: 30,top: 10),
-                    child: TextFormField(
-                      obscureText: _isHidden,
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Color.fromRGBO(191, 181, 180, 0.2),
-                        prefixIcon : Icon(Icons.password_sharp),
-                        labelText: 'Confirm Password',
-                        border: const OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                          borderSide: BorderSide(color: Colors.blue),
-
-                        ),
-                        hintText: 'Reconfirm your password',
-                        suffix: SizedBox(
-                          width: 40,
-                          child: InkWell(
-                            onTap: _togglePasswordView1,
-                            child: Icon(
-                              _isHidden
-                                  ? Icons.visibility
-                                  : Icons.visibility_off, size: 18,
-                            ),
-                          ),
-                        ),
-                      ),
-                      validator: (value){
-                        if(value!.isEmpty){
-                          return "name cannot be empty";
-                        }
-                        return null;
-
-                      },
-                    ),
-                  ),
-                  const SizedBox(height:40),
-                  MaterialButton(
-                    minWidth: 220,
-                    height: 50,
-                    onPressed: () {
-                    if(_formKey.currentState!.validate()) {
-                      Navigator.pushNamed(context, Myroutes.genderdateRoute);
-                    }
+                    onChanged: (value) {
+                      setState(() {
+                        _email = value.trim();
+                      });
                     },
-                    color: Color.fromRGBO(255, 153,240,1),
-                    shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                          color: Colors.black,
-                        ),
-                        borderRadius: BorderRadius.circular(60)),
-                    child: Text("Next",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                        )),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "email cannot be empty";
+                      }
+                      return null;
+                    },
                   ),
-                ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
+                  child: TextFormField(
+                    obscureText: _isHidden,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color.fromRGBO(191, 181, 180, 0.2),
+                      prefixIcon: Icon(Icons.password_sharp),
+                      labelText: 'Password',
+                      border: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                        borderSide: BorderSide(color: Colors.blue),
+                      ),
+                      hintText: 'Enter Password here',
+                      suffix: SizedBox(
+                        width: 40,
+                        child: InkWell(
+                          onTap: _togglePasswordView,
+                          child: Icon(
+                            _isHidden1
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                            size: 18,
+                          ),
+                        ),
+                      ),
+                    ),
+                    onChanged: (value) {
+                      setState(() {
+                        _password = value.trim();
+                      });
+                    },
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "Password cannot be empty";
+                      }
+                      return null;
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
+                  child: TextFormField(
+                    obscureText: _isHidden,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color.fromRGBO(191, 181, 180, 0.2),
+                      prefixIcon: Icon(Icons.password_sharp),
+                      labelText: 'Confirm Password',
+                      border: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                        borderSide: BorderSide(color: Colors.blue),
+                      ),
+                      hintText: 'Reconfirm your password',
+                      suffix: SizedBox(
+                        width: 40,
+                        child: InkWell(
+                          onTap: _togglePasswordView1,
+                          child: Icon(
+                            _isHidden1
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                            size: 18,
+                          ),
+                        ),
+                      ),
+                    ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "name cannot be empty";
+                      }
+                      return null;
+                    },
+                  ),
+                ),
+                const SizedBox(height: 40),
+                MaterialButton(
+                  minWidth: 220,
+                  height: 50,
+                  onPressed: () async {
 
-              ),
+
+                    if (_formKey.currentState!.validate()) {
+                      auth.createUserWithEmailAndPassword(
+                        email: _email,
+                        password: _password,
+                      );
+                      await users.add({
+                        'name': 'shayan',
+                        'phone number': '6548765434'
+                      }).then((value) => print('users addedd'));
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) => Genderdatepage()));
+                    }
+                  },
+                  color: Color.fromRGBO(255, 153, 240, 1),
+                  shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        color: Colors.black,
+                      ),
+                      borderRadius: BorderRadius.circular(60)),
+                  child: Text("Next",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                      )),
+                ),
+              ],
             ),
           ),
+        ),
       ),
-
     );
   }
 
@@ -239,9 +253,16 @@ class _CustomersignupageState extends State<Customersignupage> {
       _isHidden = !_isHidden;
     });
   }
+
   void _togglePasswordView1() {
     setState(() {
       _isHidden1 = !_isHidden1;
+    });
+  }
+
+  Future _signUp() async {
+    setState(() {
+      loading = true;
     });
   }
 }

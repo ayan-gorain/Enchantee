@@ -1,5 +1,7 @@
 import 'dart:ffi';
 
+import 'package:enchante/pages/deliveryagent/gender_date_1page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import '../../utiles/routes.dart';
@@ -12,6 +14,9 @@ class deliveryagesignupage  extends StatefulWidget {
 }
 
 class _deliveryagesignupageState extends State<deliveryagesignupage> {
+  late String _email, _password;
+  final auth = FirebaseAuth.instance;
+  var loading = false;
   final _formKey=GlobalKey<FormState>();
   bool _isHidden = true;
   bool _isHidden1 = true;
@@ -93,6 +98,11 @@ class _deliveryagesignupageState extends State<deliveryagesignupage> {
                     hintText: 'Enter your Email',
 
                   ),
+                  onChanged: (value) {
+                    setState(() {
+                      _email = value.trim();
+                    });
+                  },
                   validator: (value){
                     if(value!.isEmpty){
                       return "Email cannot be empty";
@@ -183,6 +193,11 @@ class _deliveryagesignupageState extends State<deliveryagesignupage> {
                 ),
               ),
             ),
+                  onChanged: (value) {
+                    setState(() {
+                      _password = value.trim();
+                    });
+                  },
                   validator: (value){
                     if(value!.isEmpty){
                       return "password cannot be empty";
@@ -236,8 +251,14 @@ class _deliveryagesignupageState extends State<deliveryagesignupage> {
                 minWidth: 220,
                 height: 50,
                 onPressed: () {
+
                   if(_formKey.currentState!.validate()) {
-                    Navigator.pushNamed(context, Myroutes.genderdate1Route);
+                    auth.createUserWithEmailAndPassword(
+                      email: _email,
+                      password: _password,
+                    );
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) => Genderdate1page()));
                   }
                 },
                 color: const Color.fromRGBO(255, 153,240,1),
