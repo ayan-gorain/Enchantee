@@ -1,5 +1,5 @@
 
-import 'package:dropdown_button2/dropdown_button2.dart';
+
 
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
@@ -108,53 +108,7 @@ class _VendorsignupageState extends State<Vendorsignupage> {
                   ),
                 ),
 
-                child: DropdownButtonHideUnderline(
 
-                  child: DropdownButton2(
-
-                    hint: Row(
-                      children: [
-                        SizedBox(width: 15),
-                        Icon(
-                          Icons.shop_rounded,
-                          size: 20,
-                          color: Colors.grey,
-                        ),
-                        SizedBox(width: 14),
-                        Text(
-                          'Select Shop',
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Theme
-                                .of(context)
-                                .hintColor,
-                          ),
-                        ),
-                      ],
-                    ),
-                    items: items
-                        .map((item) =>
-                        DropdownMenuItem<String>(
-                          value: item,
-                          child: Text(
-                            item,
-                            style: const TextStyle(
-                              fontSize: 14,
-                            ),
-                          ),
-                        ))
-                        .toList(),
-                    value: selectedValue,
-                    onChanged: (value) {
-                      setState(() {
-                        selectedValue = value as String;
-                      });
-                    },
-                    buttonHeight: 55,
-                    buttonWidth: 320,
-                    itemHeight: 70,
-                  ),
-                ),
           ),
                       Padding(
                         padding: EdgeInsets.only(left:30,right: 30,top: 10),

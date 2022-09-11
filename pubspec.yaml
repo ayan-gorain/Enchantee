@@ -40,7 +40,7 @@ dependencies:
   intl_phone_field: ^3.1.0
   editable_image: ^1.1.0
   image_picker: ^0.6.5+3
-  dropdown_button2: ^1.7.1
+
   gender_picker: ^1.1.0
   flutter_linear_datepicker: ^2.0.4
   intl: ^0.17.0
