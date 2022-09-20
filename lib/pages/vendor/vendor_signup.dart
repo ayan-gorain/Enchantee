@@ -1,6 +1,7 @@
 
 
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import '../../utiles/routes.dart';
@@ -12,9 +13,13 @@ class Vendorsignupage  extends StatefulWidget {
   @override
   State<Vendorsignupage> createState() => _VendorsignupageState();
   final _formKey=GlobalKey<FormState>();
+
 }
 
 class _VendorsignupageState extends State<Vendorsignupage> {
+  CollectionReference users = FirebaseFirestore.instance.collection('users');
+  late String namee;
+  late String phoneno;
   final _formKey=GlobalKey<FormState>();
   bool _isHidden = true;
   bool _isHidden1 = true;
@@ -58,7 +63,7 @@ class _VendorsignupageState extends State<Vendorsignupage> {
                                 fontWeight: FontWeight.w300)),
                       ),
                       const SizedBox(height: 20),
-                      const UserImagePicker(),
+                      const imagepicker(),
                       const SizedBox(height: 20),
                        Padding(
                         padding: EdgeInsets.only(left:30,right: 30,top: 10),
@@ -76,6 +81,9 @@ class _VendorsignupageState extends State<Vendorsignupage> {
                             hintText: 'Enter your full Name',
 
                           ),
+                          onChanged: (value){
+                            namee=value;
+                          },
                           validator: (value){
                             if(value!.isEmpty){
                               return "name cannot be empty";
@@ -157,6 +165,8 @@ class _VendorsignupageState extends State<Vendorsignupage> {
                             initialCountryCode: 'IN',
                             onChanged: (phone) {
                               print(phone.completeNumber);
+                              phoneno=phone.toString();
+
                             },
                           ),
                         ),
@@ -238,8 +248,16 @@ class _VendorsignupageState extends State<Vendorsignupage> {
                       MaterialButton(
                         minWidth: 220,
                         height: 50,
-                        onPressed: () {
-                        if(_formKey.currentState!.validate()) {
+                        onPressed: () async {
+                          await users
+                              .add({
+                            'full_name': namee,
+                            'phone number':phoneno,
+                          })
+                              .then((value) => print("User Added"))
+                              .catchError((error) => print("Failed to add user: $error"));;
+
+                          if(_formKey.currentState!.validate()) {
                           Navigator.pushNamed(context, Myroutes.otp1Route);
                         }
                         },

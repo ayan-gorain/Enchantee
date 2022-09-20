@@ -1,5 +1,6 @@
 import 'dart:ffi';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:enchante/pages/deliveryagent/gender_date_1page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,10 @@ class deliveryagesignupage  extends StatefulWidget {
 }
 
 class _deliveryagesignupageState extends State<deliveryagesignupage> {
+  CollectionReference users = FirebaseFirestore.instance.collection('users');
+  late String namee;
+  late String phoneno;
+  late String addh;
   late String _email, _password;
   final auth = FirebaseAuth.instance;
   var loading = false;
@@ -54,7 +59,7 @@ class _deliveryagesignupageState extends State<deliveryagesignupage> {
                         fontWeight: FontWeight.w300)),
               ),
               const SizedBox(height: 40),
-              const UserImagePicker(),
+              const imagepicker(),
               const SizedBox(height: 15),
               Padding(
                 padding: EdgeInsets.only(left:30,right: 30,top: 10),
@@ -72,6 +77,9 @@ class _deliveryagesignupageState extends State<deliveryagesignupage> {
                     hintText: 'Enter your full Name',
 
                   ),
+                  onChanged: (value){
+                    namee=value;
+                  },
                   validator: (value){
                     if(value!.isEmpty){
                       return "name cannot be empty";
@@ -135,6 +143,8 @@ class _deliveryagesignupageState extends State<deliveryagesignupage> {
                     initialCountryCode: 'IN',
                     onChanged: (phone) {
                       print(phone.completeNumber);
+                      phoneno=phone.toString();
+
                     },
                   ),
                 ),
@@ -155,6 +165,9 @@ class _deliveryagesignupageState extends State<deliveryagesignupage> {
                 hintText: 'Enter your Addhar /Pan number',
 
               ),
+              onChanged: (value){
+                addh=value;
+              },
               validator: (value){
                 if(value!.isEmpty){
                   return "addhar no /pan no cannot be empty";
@@ -250,7 +263,18 @@ class _deliveryagesignupageState extends State<deliveryagesignupage> {
               MaterialButton(
                 minWidth: 220,
                 height: 50,
-                onPressed: () {
+                onPressed: () async {
+                  await users
+                      .add({
+                    'full_name': namee,
+                    'phone number':phoneno,
+                    'addhar/pan': addh,
+
+
+                  })
+                      .then((value) => print("User Added"))
+                      .catchError((error) => print("Failed to add user: $error"));;
+
 
                   if(_formKey.currentState!.validate()) {
                     auth.createUserWithEmailAndPassword(

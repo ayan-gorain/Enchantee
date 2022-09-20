@@ -1,8 +1,13 @@
 import 'package:enchante/pages/commonpages/splash%20screen.dart';
-import 'package:enchante/pages/customer/cart_screen.dart';
+import 'package:enchante/pages/customer/adresspage1.dart';
+import 'package:enchante/pages/customer/cart/CArt.dart';
+import 'package:enchante/pages/customer/cart/cartproductpage.dart';
+import 'package:enchante/pages/customer/cart/catalog%20screen.dart';
+import 'package:enchante/pages/customer/cart/catalog.dart';
 import 'package:enchante/pages/customer/navigation/main_page.dart';
 import 'package:enchante/pages/customer/product_list.dart';
 import 'package:enchante/pages/customer/search_places_screen.dart';
+import 'package:enchante/pages/customer/shop.dart';
 import 'package:enchante/pages/deliveryagent/Deliviryage_signup.dart';
 import 'package:enchante/pages/deliveryagent/gender_date_1page.dart';
 import 'package:enchante/pages/deliveryagent/otp2_page.dart';
@@ -13,6 +18,7 @@ import 'package:enchante/pages/customer/otp_page.dart';
 import 'package:enchante/pages/vendor/otp1_page.dart';
 import 'package:enchante/pages/vendor/vendor_signup.dart';
 import 'package:enchante/pages/customer/navigation/welcome_page.dart';
+import 'package:enchante/widget/user_image_picker.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:enchante/pages/customer/customers_signup.dart';
@@ -24,7 +30,7 @@ import 'pages/commonpages/signup_page.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp();
+  await Firebase.initializeApp();
   runApp(Myapp());
 }
 
@@ -36,6 +42,7 @@ class Myapp extends StatelessWidget {
     return MaterialApp(
       routes: {
         "/": (context) =>splashscreenpage(),
+        Myroutes.splashRoute: (context) =>splashscreenpage(),
         Myroutes.openRoute: (context) =>Openpage(),
         Myroutes.open1Route: (context) => Open1page(),
         Myroutes.loginRoute: (context) =>Loginpage(),
@@ -52,10 +59,11 @@ class Myapp extends StatelessWidget {
         Myroutes.genderdate1Route: (context) =>Genderdate1page(),
         Myroutes.onboardingRoute: (context) =>Onboardingpage(),
         Myroutes.navmainRoute: (context) =>BottomNavBar(),
-        Myroutes.productshowRoute: (context) =>ProductlistPage(),
-        Myroutes.strviewRoute: (context) =>screachplacepage(),
-        Myroutes.splashRoute: (context) =>splashscreenpage(),
-        Myroutes.CartScreenRoute: (context) =>CartScreen(),
+        Myroutes.strviewRoute: (context) => adresspage(),
+         Myroutes.CatalogProductsRoute: (context) => CatalogScreen(),
+         Myroutes.CartScreenRoute: (context) => CartScreen(),
+         Myroutes.pictakeRoute: (context) =>imagepicker(),
+         Myroutes.shopnameRoute: (context) =>shopname(),
 
 
 

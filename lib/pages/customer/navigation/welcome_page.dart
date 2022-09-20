@@ -113,7 +113,7 @@ class _welcomepageState extends State<welcomepage> {
                     minWidth:160,
                     height: 70,
                     onPressed: () {
-                      Navigator.pushNamed(context, Myroutes.productshowRoute );
+                      Navigator.pushNamed(context, Myroutes.shopnameRoute);
                     },
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -130,7 +130,7 @@ class _welcomepageState extends State<welcomepage> {
                     minWidth:160,
                     height: 70,
                     onPressed: () {
-                      Navigator.pushNamed(context, Myroutes.productshowRoute );
+                      Navigator.pushNamed(context, Myroutes.shopnameRoute);
                     },
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -155,7 +155,7 @@ class _welcomepageState extends State<welcomepage> {
                     minWidth:160,
                     height: 70,
                     onPressed: () {
-                      Navigator.pushNamed(context, Myroutes.productshowRoute );
+                      Navigator.pushNamed(context, Myroutes.shopnameRoute);
                     },
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -172,7 +172,7 @@ class _welcomepageState extends State<welcomepage> {
                     minWidth:160,
                     height: 70,
                     onPressed: () {
-                      Navigator.pushNamed(context, Myroutes.productshowRoute );
+                      Navigator.pushNamed(context, Myroutes.shopnameRoute);
                     },
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -193,7 +193,7 @@ class _welcomepageState extends State<welcomepage> {
                     minWidth:160,
                     height: 70,
                     onPressed: () {
-                      Navigator.pushNamed(context, Myroutes.productshowRoute);
+                      Navigator.pushNamed(context, Myroutes.shopnameRoute);
                     },
                     color: Colors.white,
                     shape: RoundedRectangleBorder(

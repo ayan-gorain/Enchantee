@@ -1,5 +1,6 @@
+import 'dart:ffi';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:enchante/pages/deliveryagent/gender_date_1page.dart';
 import 'package:enchante/utiles/routes.dart';
 import 'package:enchante/widget/user_image_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -19,6 +20,8 @@ class Customersignupage extends StatefulWidget {
 
 class _CustomersignupageState extends State<Customersignupage> {
   CollectionReference users = FirebaseFirestore.instance.collection('users');
+  late String namee;
+  late String phoneno;
 
   late String _email, _password;
   final auth = FirebaseAuth.instance;
@@ -60,7 +63,7 @@ class _CustomersignupageState extends State<Customersignupage> {
                           fontWeight: FontWeight.w300)),
                 ),
                 const SizedBox(height: 30),
-                const UserImagePicker(),
+                const imagepicker(),
                 const SizedBox(height: 40),
                 Padding(
                   padding: EdgeInsets.only(left: 30, right: 30, top: 10),
@@ -76,6 +79,9 @@ class _CustomersignupageState extends State<Customersignupage> {
                       ),
                       hintText: 'Enter your Full Name',
                     ),
+                    onChanged: (value){
+                      namee=value;
+                    },
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "name cannot be empty";
@@ -103,7 +109,10 @@ class _CustomersignupageState extends State<Customersignupage> {
                       initialCountryCode: 'IN',
                       onChanged: (phone) {
                         print(phone.completeNumber);
+                       phoneno=phone.toString();
+
                       },
+
                     ),
                   ),
                 ),
@@ -203,7 +212,7 @@ class _CustomersignupageState extends State<Customersignupage> {
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "name cannot be empty";
+                        return "password cannot be empty";
                       }
                       return null;
                     },
@@ -214,6 +223,13 @@ class _CustomersignupageState extends State<Customersignupage> {
                   minWidth: 220,
                   height: 50,
                   onPressed: () async {
+                    await users
+                        .add({
+                      'full_name': namee,
+                     'phone number':phoneno,
+                    })
+                        .then((value) => print("User Added"))
+                        .catchError((error) => print("Failed to add user: $error"));;
 
 
                     if (_formKey.currentState!.validate()) {
@@ -221,10 +237,7 @@ class _CustomersignupageState extends State<Customersignupage> {
                         email: _email,
                         password: _password,
                       );
-                      await users.add({
-                        'name': 'shayan',
-                        'phone number': '6548765434'
-                      }).then((value) => print('users addedd'));
+                      
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
                           builder: (context) => Genderdatepage()));
                     }
