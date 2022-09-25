@@ -42,7 +42,7 @@ class Myapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        "/": (context) =>paymentpage(),
+        "/": (context) =>splashscreenpage(),
         Myroutes.splashRoute: (context) =>splashscreenpage(),
         Myroutes.openRoute: (context) =>Openpage(),
         Myroutes.open1Route: (context) => Open1page(),
