@@ -15,7 +15,7 @@ class deliveryagesignupage  extends StatefulWidget {
 }
 
 class _deliveryagesignupageState extends State<deliveryagesignupage> {
-  CollectionReference users = FirebaseFirestore.instance.collection('users');
+  CollectionReference users = FirebaseFirestore.instance.collection('deliveryusers');
   late String namee;
   late String phoneno;
   late String addh;

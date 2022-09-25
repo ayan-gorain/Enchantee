@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import '../../utiles/routes.dart';
+import 'first_page.dart';
+import 'first_page.dart';
+import 'first_page.dart';
 class otppage1 extends StatefulWidget {
   const otppage1({Key? key}) : super(key: key);
 
@@ -160,7 +165,7 @@ class _otppage1State extends State<otppage1> {
                             minWidth: 200,
                             height: 50,
                             onPressed: () {
-                              //Navigator.pushNamed(context, Myroutes.onboardingRoute);
+                              Navigator.pushNamed(context, Myroutes.open2Route);
                             },
                             color: Color.fromRGBO(51,255,255,1),
                             shape: RoundedRectangleBorder(

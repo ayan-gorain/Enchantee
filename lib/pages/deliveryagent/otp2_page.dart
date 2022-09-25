@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import '../../utiles/routes.dart';
 class otppage2 extends StatefulWidget {
   const otppage2({Key? key}) : super(key: key);
 
@@ -160,7 +162,7 @@ class _otppage2State extends State<otppage2> {
                             minWidth: 200,
                             height: 50,
                             onPressed: () {
-                              //Navigator.pushNamed(context, Myroutes.onboardingRoute);
+                              Navigator.pushNamed(context, Myroutes.open3Route);
                             },
                             color: Color.fromRGBO(51,255,255,1),
                             shape: RoundedRectangleBorder(

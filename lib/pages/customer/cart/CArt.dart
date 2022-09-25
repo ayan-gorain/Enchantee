@@ -1,5 +1,9 @@
 import 'package:enchante/pages/customer/cart/cartproductpage.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import '../../../utiles/routes.dart';
+import '../paymentpage.dart';
 import 'cart_total.dart';
 import 'cartmodel.dart';
 
@@ -35,10 +39,26 @@ class _CartScreenState extends State<CartScreen> {
           children: [
             CartProducts(),
             CartTotal(),
-            SizedBox(height: 10,),
-            ElevatedButton(onPressed: (){
+            SizedBox(height: 30,),
+            MaterialButton(
+              minWidth: 100,
+              height: 50,
+              onPressed: () {
+                Get.to(paymentpage());
 
-            }, child: Text("Payment"))
+              },
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                  side: BorderSide(
+                    color: Colors.black,
+                  ),
+                  borderRadius: BorderRadius.circular(40)),
+              child: Text("Checkout",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                  )),
+            ),
+
           ],
         ),
       ),

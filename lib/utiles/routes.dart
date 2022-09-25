@@ -1,6 +1,8 @@
 class Myroutes {
   static String openRoute = "/open";
   static String open1Route = "/open1";
+  static String open2Route = "/open2";
+  static String open3Route = "/open3";
   static String loginRoute = "/login";
   static String signupRoute = "/sign";
   static String welcomeRoute= "/welc";
@@ -21,6 +23,11 @@ class Myroutes {
   static String pictakeRoute= "/pictake";
   static String CatalogProductsRoute= "/catpou";
   static String shopnameRoute= "/shopnam";
-  static String paymentpageRoute= "/paynam";
+  static String paymentRoute= "/payment";
+  static String confirmRoute= "/confirm";
+  static String ordersRoute= "/orders";
+  static String helppRoute= "/orders";
+
+
 
 }
