@@ -21,5 +21,6 @@ class Myroutes {
   static String pictakeRoute= "/pictake";
   static String CatalogProductsRoute= "/catpou";
   static String shopnameRoute= "/shopnam";
+  static String paymentpageRoute= "/paynam";
 
 }

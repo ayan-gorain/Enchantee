@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 import '../customer/onboarding_page.dart';
 
@@ -197,7 +198,9 @@ class _LoginpageState extends State<Loginpage> {
                           child: IconButton(
 
                               icon: const FaIcon(FontAwesomeIcons.google),
-                              onPressed: () {}
+                              onPressed: () {
+                              //  final peovider=Provider.of(context,listen:false);
+                              }
                           ),
 
                           backgroundColor: Colors.deepOrangeAccent,

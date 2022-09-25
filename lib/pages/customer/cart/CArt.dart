@@ -35,6 +35,10 @@ class _CartScreenState extends State<CartScreen> {
           children: [
             CartProducts(),
             CartTotal(),
+            SizedBox(height: 10,),
+            ElevatedButton(onPressed: (){
+
+            }, child: Text("Payment"))
           ],
         ),
       ),

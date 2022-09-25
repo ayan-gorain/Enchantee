@@ -17,18 +17,16 @@ class Vendorsignupage  extends StatefulWidget {
 }
 
 class _VendorsignupageState extends State<Vendorsignupage> {
-  CollectionReference users = FirebaseFirestore.instance.collection('users');
+  CollectionReference users = FirebaseFirestore.instance.collection('vendorusers');
   late String namee;
+  late String shop_name;
   late String phoneno;
+  late String adresss;
   final _formKey=GlobalKey<FormState>();
   bool _isHidden = true;
   bool _isHidden1 = true;
 
-  final List<String> items = [
-    'Laundry shop',
-    'tailor shop',
 
-  ];
   String? selectedValue;
 
   @override
@@ -172,6 +170,64 @@ class _VendorsignupageState extends State<Vendorsignupage> {
                         ),
                       ),
                       Padding(
+                        padding: EdgeInsets.only(left:30,right: 30,top: 10),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Color.fromRGBO(191, 181, 180, 0.2),
+                            prefixIcon : Icon(Icons.mail_outline),
+                            labelText: 'Shop Name',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                              borderSide: BorderSide(color: Colors.blue),
+
+                            ),
+                            hintText: 'Enter your Shop name',
+
+                          ),
+                          onChanged: (value){
+                            shop_name=value;
+                          },
+
+                          validator: (value){
+                            if(value!.isEmpty){
+                              return "Shop name cannot be empty";
+                            }
+                            return null;
+
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left:30,right: 30,top: 10),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Color.fromRGBO(191, 181, 180, 0.2),
+                            prefixIcon : Icon(Icons.mail_outline),
+                            labelText: 'Adresss',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                              borderSide: BorderSide(color: Colors.blue),
+
+                            ),
+                            hintText: 'Enter your Adress',
+                            contentPadding: EdgeInsets.symmetric(vertical: 40),
+
+                          ),
+                          onChanged: (value){
+                            adresss=value;
+                          },
+                          validator: (value){
+                            if(value!.isEmpty){
+                              return "Adress cannot be empty";
+                            }
+                            return null;
+
+                          },
+                        ),
+                      ),
+                      Padding(
                         padding: const EdgeInsets.only(left:30,right: 30,top: 10),
                         child: TextFormField(
                           obscureText: _isHidden,
@@ -253,6 +309,8 @@ class _VendorsignupageState extends State<Vendorsignupage> {
                               .add({
                             'full_name': namee,
                             'phone number':phoneno,
+                            'shop name':shop_name,
+                            'adress':adresss,
                           })
                               .then((value) => print("User Added"))
                               .catchError((error) => print("Failed to add user: $error"));;

@@ -35,7 +35,7 @@ class _otppage2State extends State<otppage2> {
                             padding: const EdgeInsets.all(30.0),
                             child: Image.asset("assets/images/otp.jpg", fit: BoxFit.cover,),
                           ),
-                          Text("Verification 2Code",
+                          Text("Verification Code",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   inherit: true,

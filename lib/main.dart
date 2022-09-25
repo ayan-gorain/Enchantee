@@ -5,6 +5,7 @@ import 'package:enchante/pages/customer/cart/cartproductpage.dart';
 import 'package:enchante/pages/customer/cart/catalog%20screen.dart';
 import 'package:enchante/pages/customer/cart/catalog.dart';
 import 'package:enchante/pages/customer/navigation/main_page.dart';
+import 'package:enchante/pages/customer/paymentpage.dart';
 import 'package:enchante/pages/customer/product_list.dart';
 import 'package:enchante/pages/customer/search_places_screen.dart';
 import 'package:enchante/pages/customer/shop.dart';
@@ -41,7 +42,7 @@ class Myapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        "/": (context) =>splashscreenpage(),
+        "/": (context) =>paymentpage(),
         Myroutes.splashRoute: (context) =>splashscreenpage(),
         Myroutes.openRoute: (context) =>Openpage(),
         Myroutes.open1Route: (context) => Open1page(),
@@ -64,6 +65,8 @@ class Myapp extends StatelessWidget {
          Myroutes.CartScreenRoute: (context) => CartScreen(),
          Myroutes.pictakeRoute: (context) =>imagepicker(),
          Myroutes.shopnameRoute: (context) =>shopname(),
+         Myroutes. paymentpageRoute: (context) =>paymentpage(),
+
 
 
 
