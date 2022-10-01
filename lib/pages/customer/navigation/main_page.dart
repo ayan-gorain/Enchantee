@@ -1,8 +1,9 @@
+import 'package:enchante/pages/customer/navigation/profile_pag%201.dart';
 import 'package:enchante/pages/customer/navigation/serach.dart';
 import 'package:enchante/pages/customer/navigation/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'help.dart';
+
 
 
 class BottomNavBar extends StatefulWidget {
@@ -15,8 +16,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
   var PagesAll=[welcomepage(),
     serachpage(),
-
-    helppage(),];
+    infopage(),];
   var myindex=0;
   @override
   Widget build(BuildContext context) {

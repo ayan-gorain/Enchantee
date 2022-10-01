@@ -24,28 +24,14 @@ class _welcomepageState extends State<welcomepage> {
     ),
         ),
           actions: <Widget>[
-            TextButton.icon(
-                label: Text('Address',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),),
-                icon: Icon(Icons.keyboard_arrow_down_outlined,color: Colors.white,),
-                onPressed: () {
-                  print('Pressed');
-                }
-            ),
+
           ],
         backgroundColor: Colors.redAccent,
         elevation: 50.0,
 
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
-      drawer: Drawer(
-        child: SingleChildScrollView(
 
-        )
-      ),
       body: SizedBox(
         child: Padding(
           padding: const EdgeInsets.all(10.0),

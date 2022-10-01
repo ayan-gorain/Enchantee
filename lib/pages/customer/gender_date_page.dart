@@ -119,7 +119,7 @@ class _GenderdatepageState extends State<Genderdatepage> {
                     minWidth: 220,
                     height: 50,
                     onPressed: () {
-                      Navigator.pushNamed(context, Myroutes.otpRoute);
+                      Navigator.pushNamed(context, Myroutes.onboardingRoute);
                     },
                     color: const Color.fromRGBO(255, 153,240,1),
                     shape: RoundedRectangleBorder(

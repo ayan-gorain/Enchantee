@@ -316,7 +316,7 @@ class _VendorsignupageState extends State<Vendorsignupage> {
                               .catchError((error) => print("Failed to add user: $error"));;
 
                           if(_formKey.currentState!.validate()) {
-                          Navigator.pushNamed(context, Myroutes.otp1Route);
+                          Navigator.pushNamed(context, Myroutes.open2Route);
                         }
                         },
                         color: Color.fromRGBO(255, 153,240,1),
