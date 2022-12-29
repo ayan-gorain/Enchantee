@@ -5,7 +5,7 @@ import 'dart:async';
 import 'dart:math';
 import 'package:google_api_headers/google_api_headers.dart';
 import 'package:google_maps_webservice/places.dart';
-const kGoogleApiKey="AIzaSyCJP3BNviaCA8V6jjMkK-G5IAkQGVcvCj4";
+const kGoogleApiKey="";
 final homeScaffoldKey = GlobalKey<ScaffoldState>();
 final searchScaffoldKey = GlobalKey<ScaffoldState>();
 

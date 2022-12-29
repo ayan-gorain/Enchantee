@@ -79,7 +79,8 @@ class _welcomepageState extends State<welcomepage> {
                   fit: BoxFit.cover,
                 ),
               ),
-              ),Container(
+              ),
+                Container(
               margin: EdgeInsets.all(6.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8.0),
