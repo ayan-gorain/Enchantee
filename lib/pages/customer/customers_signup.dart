@@ -19,9 +19,16 @@ class Customersignupage extends StatefulWidget {
 }
 
 class _CustomersignupageState extends State<Customersignupage> {
-  CollectionReference users = FirebaseFirestore.instance.collection('users');
+  TextEditingController countrycode=TextEditingController();
+
+
+
+  final FirebaseFirestore db = FirebaseFirestore.instance;
+
   late String namee;
   late String phoneno;
+  late String email;
+  late String adresss;
 
   late String _email, _password;
   final auth = FirebaseAuth.instance;
@@ -32,6 +39,10 @@ class _CustomersignupageState extends State<Customersignupage> {
   bool _isHidden1 = true;
 
   @override
+  void initState(){
+    countrycode.text="+91";
+    super.initState();
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -131,6 +142,7 @@ class _CustomersignupageState extends State<Customersignupage> {
                       hintText: 'Enter your Email',
                     ),
                     onChanged: (value) {
+                      email=value;
                       setState(() {
                         _email = value.trim();
                       });
@@ -140,6 +152,35 @@ class _CustomersignupageState extends State<Customersignupage> {
                         return "email cannot be empty";
                       }
                       return null;
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left:30,right: 30,top: 10),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color.fromRGBO(191, 181, 180, 0.2),
+                      prefixIcon : Icon(Icons.mail_outline),
+                      labelText: 'Adresss',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                        borderSide: BorderSide(color: Colors.blue),
+
+                      ),
+                      hintText: 'Enter your Adress',
+                      contentPadding: EdgeInsets.symmetric(vertical: 40),
+
+                    ),
+                    onChanged: (value){
+                      adresss=value;
+                    },
+                    validator: (value){
+                      if(value!.isEmpty){
+                        return "Adress cannot be empty";
+                      }
+                      return null;
+
                     },
                   ),
                 ),
@@ -183,6 +224,7 @@ class _CustomersignupageState extends State<Customersignupage> {
                     },
                   ),
                 ),
+
                 Padding(
                   padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
                   child: TextFormField(
@@ -219,28 +261,42 @@ class _CustomersignupageState extends State<Customersignupage> {
                   ),
                 ),
                 const SizedBox(height: 40),
+
                 MaterialButton(
                   minWidth: 220,
                   height: 50,
                   onPressed: () async {
-                    await users
-                        .add({
-                      'full_name': namee,
-                     'phone number':phoneno,
-                    })
-                        .then((value) => print("User Added"))
-                        .catchError((error) => print("Failed to add user: $error"));;
-
 
                     if (_formKey.currentState!.validate()) {
-                      auth.createUserWithEmailAndPassword(
-                        email: _email,
-                        password: _password,
-                      );
-                      
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (context) => Genderdatepage()));
-                    }
+                    final data = <String, String>{
+                      "name": namee,
+                      "email": email,
+                      "phone number": phoneno,
+                      "adress":adresss
+                    };
+
+                    auth.createUserWithEmailAndPassword(
+                      email: _email,
+                      password: _password,
+                    ).then((value) async => {
+
+                          await db.collection("users")
+                              .doc(FirebaseAuth.instance.currentUser!.uid)
+                              .set(data)
+                              .onError((e, _) => print("Error writing document: $e"))
+                              .then((value) {
+                                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                                  builder: (context) => Genderdatepage()));
+                              })
+                          });
+
+
+                      }
+
+                     //   .catchError((error) => print("Failed to add user: $error"));;
+
+
+
                   },
                   color: Color.fromRGBO(255, 153, 240, 1),
                   shape: RoundedRectangleBorder(

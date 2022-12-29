@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import '../../utiles/routes.dart';
 class otppage2 extends StatefulWidget {
   const otppage2({Key? key}) : super(key: key);
 
@@ -35,7 +37,7 @@ class _otppage2State extends State<otppage2> {
                             padding: const EdgeInsets.all(30.0),
                             child: Image.asset("assets/images/otp.jpg", fit: BoxFit.cover,),
                           ),
-                          Text("Verification 2Code",
+                          Text("Verification Code",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   inherit: true,
@@ -160,7 +162,7 @@ class _otppage2State extends State<otppage2> {
                             minWidth: 200,
                             height: 50,
                             onPressed: () {
-                              //Navigator.pushNamed(context, Myroutes.onboardingRoute);
+                              Navigator.pushNamed(context, Myroutes.open3Route);
                             },
                             color: Color.fromRGBO(51,255,255,1),
                             shape: RoundedRectangleBorder(

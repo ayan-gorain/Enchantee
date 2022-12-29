@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import '../../../utiles/routes.dart';
 class serachpage extends StatelessWidget {
   const serachpage({Key? key}) : super(key: key);
 
@@ -23,7 +25,9 @@ class serachpage extends StatelessWidget {
             SizedBox(
               height: 60,
               width: 300,
-              child: ElevatedButton(onPressed: (){}, child:Text(
+              child: ElevatedButton(onPressed: (){
+                Navigator.pushNamed(context, Myroutes.CartScreenRoute);
+              }, child:Text(
                 "Your cart"),
                 style:ElevatedButton.styleFrom(
                   primary: Colors.white,

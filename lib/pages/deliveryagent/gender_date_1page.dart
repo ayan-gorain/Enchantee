@@ -118,7 +118,7 @@ class _Genderdate1pageState extends State<Genderdate1page> {
                         minWidth: 220,
                         height: 50,
                         onPressed: () {
-                          Navigator.pushNamed(context, Myroutes.otp2Route);
+                          Navigator.pushNamed(context, Myroutes.open3Route);
                         },
                         color: const Color.fromRGBO(255, 153,240,1),
                         shape: RoundedRectangleBorder(

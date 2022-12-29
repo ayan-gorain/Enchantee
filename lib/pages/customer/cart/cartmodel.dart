@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 
 class Product{
-   final String name;
-   final double price;
-   final  String imageUrl;
+    final String name;
+    final double price;
+    final  String imageUrl;
+    const Product({
+       required this.name,
+       required this.price,
+       required this.imageUrl,
 
-   const Product({required this.name,required this.price,required this.imageUrl});
+});
 
 
    static const List<Product> products=[
-      Product(name: 'T-Shirt',
+      Product(
+          name: 'T-Shirt',
           price: 10,
           imageUrl: 'https://freesvg.org/img/Azure_T-Shirt.png'),
       Product(name: 'Shirt',

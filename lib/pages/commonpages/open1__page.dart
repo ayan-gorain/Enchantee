@@ -50,7 +50,7 @@ class Open1page extends StatelessWidget {
                           minWidth:350,
                           height: 60,
                           onPressed: () {
-                            Navigator.pushNamed(context, Myroutes.loginRoute);
+                            Navigator.pushNamed(context, Myroutes.logginRoute);
                           },
                           shape: RoundedRectangleBorder(
                               side: BorderSide(

@@ -1,3 +1,4 @@
+import 'package:enchante/pages/deliveryagent/firsst_ppagw.dart';
 import 'package:enchante/utiles/routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -5,15 +6,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
-import '../customer/onboarding_page.dart';
 
-class Loginpage extends StatefulWidget {
+class delLoginpage extends StatefulWidget {
   @override
-  State<Loginpage> createState() => _LoginpageState();
+  State<delLoginpage> createState() => _delLoginpageState();
 }
 
-class _LoginpageState extends State<Loginpage> {
+class _delLoginpageState extends State<delLoginpage> {
   late String _email,_password;
   final auth=FirebaseAuth.instance;
 
@@ -54,7 +55,7 @@ class _LoginpageState extends State<Loginpage> {
                             color: Colors.black,
                             fontWeight: FontWeight.w200)),
                     SizedBox(height: 40),
-                     Padding(
+                    Padding(
                       padding: const EdgeInsets.only(left:30,right: 30,top: 10),
                       child: TextFormField(
 
@@ -138,13 +139,14 @@ class _LoginpageState extends State<Loginpage> {
                       minWidth: 350,
                       height: 50,
                       onPressed: () {
-                      if(_formKey.currentState!.validate()) {
-                        auth.signInWithEmailAndPassword(email: _email, password: _password);
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>Onboardingpage()));
-                      }
+                        if(_formKey.currentState!.validate()) {
+                          auth.signInWithEmailAndPassword(email: _email, password: _password);
+                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>Open3page()));
+                        }
+
 
                       },
-                      color: Colors.deepOrangeAccent,
+                      color: Colors.blueAccent,
                       shape: RoundedRectangleBorder(
                           side: BorderSide(
                             color: Colors.black,
@@ -197,7 +199,9 @@ class _LoginpageState extends State<Loginpage> {
                           child: IconButton(
 
                               icon: const FaIcon(FontAwesomeIcons.google),
-                              onPressed: () {}
+                              onPressed: () {
+                                //  final peovider=Provider.of(context,listen:false);
+                              }
                           ),
 
                           backgroundColor: Colors.deepOrangeAccent,
@@ -211,15 +215,6 @@ class _LoginpageState extends State<Loginpage> {
                         FloatingActionButton(
                           child: IconButton(
                               icon: const FaIcon(FontAwesomeIcons.github),
-                              onPressed: () {}),
-                          backgroundColor: Colors.deepOrangeAccent,
-                          foregroundColor: Colors.white,
-                          onPressed: () {
-                            //Navigator.pushNamed(context, Myroutes.open1Route);
-                          },
-                        ), FloatingActionButton(
-                          child: IconButton(
-                              icon: const FaIcon(FontAwesomeIcons.facebook),
                               onPressed: () {}),
                           backgroundColor: Colors.deepOrangeAccent,
                           foregroundColor: Colors.white,
